@@ -13,7 +13,7 @@ const allProductsSchema = mongoose.Schema({
   pid: String,
   retail_price: reqString,
   discounted_price: reqString,
-  image: reqArray,
+  image: reqString,
   is_FK_Advantage_product: String,
   description: String,
   product_rating: String,
