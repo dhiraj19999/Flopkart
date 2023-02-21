@@ -2,7 +2,7 @@ const express = require("express");
 const userRouter = express();
 const bcrypt = require("bcrypt");
 const { UserModel } = require("../model/user.model");
-
+const jwt = require("jsonwebtoken");
 // for register the user ---->
 userRouter.post("/register", async (req, res) => {
   const { firstName, lastName, email, password, gender, mobile } = req.body;
@@ -36,6 +36,38 @@ userRouter.post("/register", async (req, res) => {
           .json({ message: "User register successfully", status: "Success" });
       }
     });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: error.message, status: "Failed" });
+  }
+});
+
+// for login the existing users -->
+userRouter.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await UserModel.find({ email });
+    if (user.length > 0) {
+      bcrypt.compare(password, user[0].password, async (err, result) => {
+        if (!result) {
+          console.log(err);
+          return res
+            .status(500)
+            .json({ message: "Wrong Password", status: "Failed" });
+        } else {
+          let token = jwt.sign({ userID: user[0]._id }, "flopkart");
+          res.status(201).json({
+            message: "User login successfully",
+            status: "Success",
+            token,
+          });
+        }
+      });
+    } else {
+      return res
+        .status(500)
+        .json({ message: "Please Signup  first", status: "Failed" });
+    }
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: error.message, status: "Failed" });
