@@ -41,6 +41,23 @@ productRouter.get("/:id", async (req, res) => {
   }
 });
 
+// update product by id
+
+productRouter.patch("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const product = await ProductModel.findByIdAndUpdate({ _id: id }, req.body);
+    res.status(201).json({ message: "Data update successfully", status: "Success" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Something went wrong", status: "Failed" });
+  }
+});
+
+// delete product by id 
+
+
+
 module.exports = {
   productRouter,
 };
