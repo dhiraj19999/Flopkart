@@ -7,6 +7,12 @@ const { userRouter } = require("./routes/user.routes");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.get("/", (req, res) => {
   res.send("This is the Home Page ");
 });
