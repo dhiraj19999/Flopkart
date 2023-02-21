@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const reqString = { type: String, required: true };
-const reqObj = { type: Object, required: true };
-const reqArray = { type: Array, required: true };
 
 const allProductsSchema = mongoose.Schema({
   uniq_id: String,

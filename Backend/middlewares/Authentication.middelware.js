@@ -7,6 +7,7 @@ const authenticate = (req, res, next) => {
     jwt.verify(token, "flopkart", (err, decoded) => {
       if (decoded) {
         const userID = decoded.userID;
+        console.log(decoded);
         req.body.authorID = userID;
         next();
       } else {
