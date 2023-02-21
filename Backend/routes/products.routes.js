@@ -8,6 +8,7 @@ productRouter.get("/", async (req, res) => {
   let q = req.query.q;
   try {
     if (q) {
+      // search functionality
       const product = await ProductModel.find({
         product_name: { $regex: q, $options: "$i" },
       })
