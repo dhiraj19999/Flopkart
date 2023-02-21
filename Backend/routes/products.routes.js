@@ -41,6 +41,21 @@ productRouter.get("/:id", async (req, res) => {
   }
 });
 
+// add products
+
+productRouter.post("/add", async (req, res) => {
+  try {
+    const product = new ProductModel(req.body);
+    product.save();
+    res
+      .status(201)
+      .json({ message: "Product added successfully", status: "Success" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Something went wrong", status: "Failed" });
+  }
+});
+
 // update product by id
 
 productRouter.patch("/:id", async (req, res) => {
