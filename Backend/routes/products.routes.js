@@ -3,8 +3,27 @@ const { ProductModel } = require("../model/products.model");
 const productRouter = express.Router();
 
 productRouter.get("/", async (req, res) => {
-  const products = await ProductModel.find().limit(10);
-  res.status(201).json(products);
+  const limit = req.query.limit || 10;
+  const page = Math.max(0, req.query.page || 0);
+  let q = req.query.q;
+  try {
+    if (q) {
+      const product = await ProductModel.find({
+        product_name: { $regex: q, $options: "$i" },
+      })
+        .limit(limit)
+        .skip(limit * page);
+      res.status(201).json({ data: product, status: "Success" });
+      return;
+    }
+    const product = await ProductModel.find()
+      .limit(limit)
+      .skip(limit * page);
+    res.status(201).json({ data: product, status: "Success" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Something went wrong", status: "Failed" });
+  }
 });
 
 module.exports = {
