@@ -1,5 +1,6 @@
 const express = require("express");
 const { connect } = require("./config/db");
+const { productRouter } = require("./routes/products.routes");
 const { userRouter } = require("./routes/user.routes");
 const app = express();
 require("dotenv").config();
@@ -9,6 +10,7 @@ app.get("/", (req, res) => {
 });
 app.use(express.json());
 app.use("/user", userRouter);
+app.use("/products", productRouter);
 
 app.listen(process.env.port, async () => {
   try {
