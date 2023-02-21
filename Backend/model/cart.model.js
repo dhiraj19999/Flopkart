@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const reqString = { type: String, required: true };
 
-const allProductsSchema = mongoose.Schema({
+const cartSchema = mongoose.Schema({
   uniq_id: String,
   crawl_timestamp: String,
   product_url: String,
@@ -18,10 +18,12 @@ const allProductsSchema = mongoose.Schema({
   overall_rating: String,
   brand: reqString,
   product_specifications: reqString,
+  authorID: String,
+  quantity: { type: Number, default: 1 },
 });
 
-const ProductModel = mongoose.model("product", allProductsSchema);
+const CartModel = mongoose.model("cart", cartSchema);
 
 module.exports = {
-  ProductModel,
+  CartModel,
 };
