@@ -47,16 +47,29 @@ productRouter.patch("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const product = await ProductModel.findByIdAndUpdate({ _id: id }, req.body);
-    res.status(201).json({ message: "Data update successfully", status: "Success" });
+    res
+      .status(201)
+      .json({ message: "Data update successfully", status: "Success" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong", status: "Failed" });
   }
 });
 
-// delete product by id 
+// delete product by id
 
-
+productRouter.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const product = await ProductModel.findByIdAndDelete({ _id: id });
+    res
+      .status(201)
+      .json({ message: "Data delete successfully", status: "Success" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Something went wrong", status: "Failed" });
+  }
+});
 
 module.exports = {
   productRouter,
