@@ -103,6 +103,39 @@ productRouter.get("/", async (req, res) => {
 
 // get product by id
 
+/**
+ * @swagger
+ * /products/:id:
+ *    get:
+ *      summary: get product by its id
+ *      tags: [Products]
+ *      responses:
+ *        200:
+ *          description: Getting data by ID
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  data:
+ *                    $ref: '#/components/schemas/Product'
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
 productRouter.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -115,6 +148,45 @@ productRouter.get("/:id", async (req, res) => {
 });
 
 // add products
+
+/**
+ * @swagger
+ * /products/add:
+ *    post:
+ *      summary: add products
+ *      tags: [Products]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Product'
+ *      responses:
+ *        200:
+ *          description: Data added Successfuly
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
 
 productRouter.post("/add", async (req, res) => {
   try {
