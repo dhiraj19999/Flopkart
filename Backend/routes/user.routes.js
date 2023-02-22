@@ -200,6 +200,176 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
+// get all the users
+
+/**
+ * @swagger
+ * /user/all-users:
+ *    get:
+ *      summary: To get the details of all users
+ *      tags: [User]
+ *      responses:
+ *        200:
+ *          description: Successfully, getting all the users
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  data:
+ *                    $ref: '#/components/schemas/User'
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
+userRouter.get("/all-users", async (req, res) => {
+  try {
+    const users = await UserModel.find();
+    res.status(201).json({
+      status: "Success",
+      data: users,
+    });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ message: "Something went wrong", status: "Failed" });
+  }
+});
+
+/**
+ * @swagger
+ * /user/delete/{id}:
+ *    delete:
+ *      summary: To delete an existing user
+ *      tags: [User]
+ *      parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: Numeric ID of the user to retrieve.
+ *         schema:
+ *           type: integer
+ *      responses:
+ *        200:
+ *          description: The user was successfully deleted
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                    description: User register successfully
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
+userRouter.delete("/delete/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const users = await UserModel.findByIdAndDelete({ _id: id });
+    res.status(201).json({
+      status: "Success",
+      message: "User delted Successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ message: "Something went wrong", status: "Failed" });
+  }
+});
+
+/**
+ * @swagger
+ * /user/update/{id}:
+ *    patch:
+ *      summary: To update the details of an existing user
+ *      tags: [User]
+ *      parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: Numeric ID of the user to retrieve.
+ *         schema:
+ *           type: integer
+ *      requestBody:
+ *        required: false
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/User'
+ *      responses:
+ *        200:
+ *          description: The user details updated successfully
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                    description: User register successfully
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                    description: User register successfully
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
+userRouter.patch("/update/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const users = await UserModel.findByIdAndUpdate({ _id: id }, req.body);
+    res.status(201).json({
+      status: "Success",
+      message: "User data updated Successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ message: "Something went wrong", status: "Failed" });
+  }
+});
 module.exports = {
   userRouter,
 };

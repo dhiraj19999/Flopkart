@@ -23,6 +23,11 @@ const options = {
     info: {
       title: "Flopkart Api",
       version: "1.0.0",
+      description:
+        "This is a REST API application made with Express and retriving data from mongodb Atlas",
+      contact: {
+        name: "Piryanshu",
+      },
     },
     servers: [
       {
