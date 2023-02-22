@@ -203,6 +203,45 @@ productRouter.post("/add", async (req, res) => {
 
 // update product by id
 
+/**
+ * @swagger
+ * /products/:id:
+ *    patch:
+ *      summary: update product by id
+ *      tags: [Products]
+ *      requestBody:
+ *        required: false
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Product'
+ *      responses:
+ *        200:
+ *          description: Data Updated Successfuly
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
 productRouter.patch("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -217,6 +256,39 @@ productRouter.patch("/:id", async (req, res) => {
 });
 
 // delete product by id
+
+/**
+ * @swagger
+ * /products/:id:
+ *    delete:
+ *      summary: delete product by id
+ *      tags: [Products]
+ *      responses:
+ *        200:
+ *          description: Data deleted Successfuly
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
 
 productRouter.delete("/:id", async (req, res) => {
   const { id } = req.params;
