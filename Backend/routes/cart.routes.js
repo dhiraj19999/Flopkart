@@ -58,6 +58,47 @@ const cartRouter = express.Router();
  *            description: default quantity will be 1
  */
 
+/**
+ * @swagger
+ * tags:
+ *  name: Cart
+ *  description: All the API routes related to Cart
+ */
+
+/**
+ * @swagger
+ * /cart:
+ *    get:
+ *      summary: get cart data
+ *      tags: [Cart]
+ *      responses:
+ *        200:
+ *          description: getting cart data successfully
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  data:
+ *                    type: object
+ *                    $ref: '#/components/schemas/Cart'
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
 cartRouter.get("/", async (req, res) => {
   console.log(req.body);
   try {
@@ -68,6 +109,45 @@ cartRouter.get("/", async (req, res) => {
     res.status(500).json({ message: "Something went wrong", status: "Failed" });
   }
 });
+
+/**
+ * @swagger
+ * /cart/add:
+ *    post:
+ *      summary: Add product to cart
+ *      tags: [Cart]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Cart'
+ *      responses:
+ *        200:
+ *          description: Added to Cart Successfully
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
 
 cartRouter.post("/add", async (req, res) => {
   try {
@@ -83,6 +163,52 @@ cartRouter.post("/add", async (req, res) => {
 });
 
 // for updating cart item
+
+/**
+ * @swagger
+ * /cart/update/{id}:
+ *    patch:
+ *      summary: update cart product by id
+ *      tags: [Cart]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          required: true
+ *          description: Numeric ID of the product to retrieve.
+ *          schema:
+ *            type: integer
+ *      requestBody:
+ *        required: false
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Cart'
+ *      responses:
+ *        200:
+ *          description: Cart Updated Successfully
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
 cartRouter.patch("/update/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -97,6 +223,47 @@ cartRouter.patch("/update/:id", async (req, res) => {
 });
 
 // for deleting cart item
+
+/**
+ * @swagger
+ * /cart/delete/{id}:
+ *    delete:
+ *      summary: delete cart products by id
+ *      tags: [Cart]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          required: true
+ *          description: Numeric ID of the product to retrieve.
+ *          schema:
+ *            type: integer
+ *      responses:
+ *        200:
+ *          description: Cart deleted Successfully
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
 cartRouter.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
   try {
