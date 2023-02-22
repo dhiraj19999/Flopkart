@@ -152,6 +152,8 @@ userRouter.post("/register", async (req, res) => {
  *                    description: Success
  *                  token:
  *                    type: string
+ *                  data:
+ *                    type: object
  *        500:
  *          description: Something went wrong
  *          content:
@@ -183,6 +185,7 @@ userRouter.post("/login", async (req, res) => {
             message: "User login successfully",
             status: "Success",
             token,
+            data: user[0],
           });
         }
       });

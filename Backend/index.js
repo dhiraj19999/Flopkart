@@ -38,8 +38,11 @@ const options = {
 
 //swagger specs
 const swaggerSpec = swaggerJsDoc(options);
-app.use("/", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
+app.get("/", (req, res) => {
+  res.send("This is the Home Page ");
+});
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/products", productRouter);

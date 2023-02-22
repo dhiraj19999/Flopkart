@@ -52,6 +52,13 @@ const productRouter = express.Router();
  *           description: extra specs about the product
  */
 
+/**
+ * @swagger
+ * tags:
+ *  name: Products
+ *  description: All the API routes related to Products
+ */
+
 // get products --->
 productRouter.get("/", async (req, res) => {
   const limit = req.query.limit || 10;
