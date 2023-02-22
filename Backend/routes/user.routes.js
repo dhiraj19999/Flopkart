@@ -40,10 +40,10 @@ const jwt = require("jsonwebtoken");
 // for register the user ---->
 /**
  * @swagger
- * /users/create:
+ * /user/register:
  *    post:
- *      summary: To post the details of a new user
- *      tags: [Users]
+ *      summary: To resgiter the details of a new user
+ *      tags: [User]
  *      requestBody:
  *        required: true
  *        content:
@@ -56,9 +56,16 @@ const jwt = require("jsonwebtoken");
  *          content:
  *            application/json:
  *              schema:
- *                $ref: '#/components/schemas/User'
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                    description: User register successfully
+ *                  status:
+ *                    type: string
+ *                    description: Success
  *        500:
- *          description: Some server error
+ *          description: Something went wrong
  */
 
 userRouter.post("/register", async (req, res) => {
