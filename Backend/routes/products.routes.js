@@ -6,10 +6,26 @@ const productRouter = express.Router();
 productRouter.get("/", async (req, res) => {
   const limit = req.query.limit || 10;
   const page = Math.max(0, req.query.page || 0);
+  const sort = req.query.sortBy;
   let q = req.query.q;
   try {
-    if (q) {
+    if (q && sort) {
       // search functionality
+      let a;
+      if (sort == "asc") {
+        a = 1;
+      } else if (sort == "desc") {
+        a = -1;
+      }
+      const product = await ProductModel.find({
+        product_name: { $regex: q, $options: "$i" },
+      })
+        .limit(limit)
+        .skip(limit * page)
+        .sort({ retail_price: a });
+      res.status(201).json({ data: product, status: "Success" });
+      return;
+    } else if (q) {
       const product = await ProductModel.find({
         product_name: { $regex: q, $options: "$i" },
       })
