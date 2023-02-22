@@ -3,7 +3,64 @@ const userRouter = express();
 const bcrypt = require("bcrypt");
 const { UserModel } = require("../model/user.model");
 const jwt = require("jsonwebtoken");
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    User:
+ *      type: object
+ *      properties:
+ *        _id:
+ *          type: string
+ *          description: The auto-generated id of the user
+ *        firstName:
+ *          type: string
+ *          description: The first name of user
+ *        lastName:
+ *          type: string
+ *          description: The last name of user
+ *        email:
+ *          type: string
+ *          description: The user email
+ *        mobile:
+ *           type: integer
+ *           description: mobile number of the user
+ *        gender:
+ *           type: string
+ *           description: gender of the user
+ */
+
+/**
+ * @swagger
+ * tags:
+ *  name: User
+ *  description: All the API routes related to User
+ */
+
 // for register the user ---->
+/**
+ * @swagger
+ * /users/create:
+ *    post:
+ *      summary: To post the details of a new user
+ *      tags: [Users]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/User'
+ *      responses:
+ *        200:
+ *          description: The user was successfully registered
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ *        500:
+ *          description: Some server error
+ */
+
 userRouter.post("/register", async (req, res) => {
   const { firstName, lastName, email, password, gender, mobile } = req.body;
   const newuser = await UserModel.find({ email });
@@ -42,8 +99,6 @@ userRouter.post("/register", async (req, res) => {
   }
 });
 
-
-
 // for login the existing users -->
 userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -75,10 +130,6 @@ userRouter.post("/login", async (req, res) => {
     return res.status(500).json({ message: error.message, status: "Failed" });
   }
 });
-
-
-
-
 
 module.exports = {
   userRouter,

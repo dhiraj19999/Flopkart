@@ -6,6 +6,8 @@ const { productRouter } = require("./routes/products.routes");
 const { userRouter } = require("./routes/user.routes");
 const app = express();
 const cors = require("cors");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 require("dotenv").config();
 
 app.use(
@@ -13,6 +15,31 @@ app.use(
     origin: "*",
   })
 );
+
+// openpi specification
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Flopkart Api",
+      version: "1.0.0",
+    },
+    server: [
+      {
+        url: "https://drab-pants-bass.cyclic.app/",
+      },
+      {
+        url: "http://localhost:8080",
+      },
+    ],
+  },
+  apis: ["./routes/*.js"],
+};
+
+//swagger specs
+const swaggerSpec = swaggerJsDoc(options);
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+
 app.get("/", (req, res) => {
   res.send("This is the Home Page ");
 });
