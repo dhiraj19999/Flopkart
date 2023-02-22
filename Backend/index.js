@@ -26,7 +26,8 @@ const options = {
       description:
         "This is a REST API application made with Express and retriving data from mongodb Atlas",
       contact: {
-        name: "Piryanshu",
+        name: "Piryanshu Bisht",
+        email: "deepubisht2004@gmail.com",
       },
     },
     servers: [
