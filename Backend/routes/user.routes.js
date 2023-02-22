@@ -66,6 +66,17 @@ const jwt = require("jsonwebtoken");
  *                    description: Success
  *        500:
  *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                    description: User register successfully
+ *                  status:
+ *                    type: string
+ *                    description: Failed
  */
 
 userRouter.post("/register", async (req, res) => {
