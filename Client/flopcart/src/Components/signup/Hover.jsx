@@ -17,10 +17,21 @@ import {RiInboxUnarchiveFill,RiCoupon3Fill} from "react-icons/ri"
 import {AiFillHeart} from "react-icons/ai"
 import {BsFillCreditCard2BackFill} from "react-icons/bs"
 import Signup from './Signup';
+import { useDispatch, useSelector } from 'react-redux';
+import { Logout } from '../../redux/authReducer/action';
 
 
 const Hover = () => {
+  const {isLoggedIn}=useSelector(store=>store.authReducer)
+  const dispatch=useDispatch()
+  const logout=()=>{
+    dispatch(Logout())
+  }
+
+
+
   return (
+
     <div>
       <Popover trigger="hover">
   <PopoverTrigger>
@@ -64,7 +75,9 @@ const Hover = () => {
                     </Flex>
                     <Flex cursor={'pointer'}  h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><AiFillHeart color="#2874f0" size="18px" /></Center> <Center ml='16px'> Wishlist</Center></Flex><hr />
                 <Flex cursor={'pointer'}  h="49px" fontSize='14px' className="pop1">  <Center ml='10px'><RiCoupon3Fill color="#2874f0" size="18px" /></Center><Center ml='16px'>Rewards</Center></Flex><hr />
-                <Flex cursor={'pointer'}  h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><BsFillCreditCard2BackFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>Gift cards</Center></Flex><hr />
+               <Flex cursor={'pointer'}  h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><BsFillCreditCard2BackFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>Gift cards</Center></Flex><hr />
+              {isLoggedIn?<> <Flex onClick={logout}  cursor={'pointer'}  h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><BsFillCreditCard2BackFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>LOGOUT</Center></Flex><hr /></>:""}
+
     </PopoverBody>
   </PopoverContent>
 </Popover>

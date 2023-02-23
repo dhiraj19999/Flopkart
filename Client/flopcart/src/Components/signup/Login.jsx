@@ -14,16 +14,42 @@ import {
     FormControl,
     Input,
     FormLabel,
+    useToast,
   } from '@chakra-ui/react'
   import {Link} from "react-router-dom"
   import Signup from './Signup'
-  
+  import { useState } from 'react'
+  import { useDispatch, useSelector } from 'react-redux';
+ import { redirect as Redirect } from 'react-router-dom'
+  import { login } from '../../redux/authReducer/action'
 
   
   
   const Login = () => {
-
+   
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
+   
+    const toast = useToast()
+    // const { loading, error } = userLogin;
+    const submitHandler = (e) => {
+      e.preventDefault();
+      console.log(email,password)
+      dispatch(login(email, password)).then(()=>{
+        toast({
+          title: 'Account created.',
+          description: "We've logged in your account for you.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
+      })
+      
+    }
+   
     const { isOpen, onOpen, onClose } = useDisclosure()
+ 
     return (
       <div>
          <Text p='4px 30px' _hover={{bg:""}} textAlign="center" fontSize={'15px'} onClick={onOpen}
@@ -76,12 +102,14 @@ import {
                 />
               </Box>
               <Box height="32rem" padding="35" width="24rem" color="#878787">
-                <FormControl>
+                <FormControl >
                  
                     <>
                      
                       <FormLabel>Email address</FormLabel>
                       <Input
+                       value={email}
+                       onChange={(e) => setEmail(e.target.value)}
                         color="black"
                         marginTop="-3"
                         name="email"
@@ -100,6 +128,8 @@ import {
                     <>
                       <FormLabel marginTop="5">Password</FormLabel>
                       <Input
+                       value={password}
+                       onChange={(e) => setPassword(e.target.value)}
                         color="black"
                         marginTop="-3"
                         name="password"
@@ -127,7 +157,7 @@ import {
 
         
                     <Button
-    
+                      onClick={submitHandler}
                       borderRadius="0.5"
                       marginTop="4"
                       padding="6"

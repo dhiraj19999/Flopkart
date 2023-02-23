@@ -1,4 +1,7 @@
-import React from 'react'
+
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { register } from '../../redux/authReducer/action';
 import {
     Modal,
     ModalOverlay,
@@ -16,18 +19,68 @@ import {
     FormErrorMessage,
     Link,
     Select,
-    HStack
+    HStack, useToast
 
   } from '@chakra-ui/react'
 
   import Login from './Login'
 
-const Signup = () => {
 
+
+const Signup = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    gender: '',
+    mobile: '',
+    password: ''
+              
+  });
+
+ 
+
+  const dispatch = useDispatch();
+  const toast = useToast()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validate form data
+    // const validationErrors = validateFormData(formData);
+    // if (Object.keys(validationErrors).length > 0) {
+    //   setErrors(validationErrors);
+    //   return;
+    // }
+
+    // Dispatch register action
+    console.log(formData)
+    dispatch(register(formData)).then(()=>{
+      toast({
+        title: 'Account created.',
+        description: "We've created your account for you.",
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+    })
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
     
     const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <div>
+     
+ 
+
+
          <Button
          mt="8px"
         _hover={{ bg: 'white' }}
@@ -81,23 +134,29 @@ const Signup = () => {
                 <FormControl isRequired>
                     <HStack> <FormLabel fontSize="xs">First Name</FormLabel>
                   <Input
+
+value={formData.firstName}
+onChange={handleInputChange}
                     htmlSize={15} width='auto'
                    size="xs"
                     color="black"
                     marginTop="-3"
-                    name="first "
+                    name="firstName"
                     variant="flushed"
                     placeholder="Enter First Name"
                 
                     required
                   />
+                 
                   <FormLabel fontSize="xs" >Last Name</FormLabel>
                   <Input
+                    value={formData.lastName}
+                    onChange={handleInputChange}
                     htmlSize={15} width='auto'
                     size="xs"
                     color="black"
                     marginTop="-3"
-                    name="Last Name "
+                    name="lastName"
                     variant="flushed"
                     placeholder="Enter Last Name"
                 
@@ -111,6 +170,8 @@ const Signup = () => {
 
                   <FormLabel fontSize="xs" marginTop="5">Email</FormLabel>
                   <Input
+                 value={formData.email}
+                 onChange={handleInputChange}
                   htmlSize={25} width='auto'
                     size="xs"
                     type="email"
@@ -124,14 +185,16 @@ const Signup = () => {
                   />
                  <FormErrorMessage>Email is required.</FormErrorMessage>
                   <FormLabel fontSize="xs" marginTop="5">Gender</FormLabel>
-                  <Box w="150px"> <Select size="xs" placeholder='Select Gender'
+                  <Box w="150px">
+                  <Select 
+                  onChange={handleInputChange} value={formData.gender} size="xs" placeholder='Select Gender'
                    color="black"
                    marginTop="-3"
                    variant="flushed"
-                   
+                   name='gender'
                   required>
-                    <option  value='option1'>Male</option>
-                    <option value='option2'>Female</option>
+                    <option  value='Male'>Male</option>
+                    <option value='Female'>Female</option>
                     </Select></Box>
                  
                   {/* <Input
@@ -146,6 +209,8 @@ const Signup = () => {
                  
                   <FormLabel fontSize="xs" marginTop="5"> Enter Mobile Number</FormLabel>
                   <Input
+                  value={formData.mobile}
+                  onChange={handleInputChange}
                    htmlSize={25} width='auto'
                    size="xs"
                    
@@ -161,6 +226,8 @@ const Signup = () => {
                  
                   <FormLabel fontSize="xs" marginTop="5">Password</FormLabel>
                   <Input
+                     value={formData.password}
+                     onChange={handleInputChange}
                    htmlSize={25} width='auto'
                    size="xs"
                     
@@ -187,6 +254,7 @@ const Signup = () => {
                   </Text>
 
                   <Button
+                    onClick={handleSubmit} 
                     borderRadius="0.5"
                     marginTop="4"
                     
