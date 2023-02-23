@@ -181,9 +181,10 @@ onChange={handleInputChange}
                     variant="flushed"
                     placeholder="Enter Email Address"
                    
-                    required
+                    
                   />
-                 <FormErrorMessage>Email is required.</FormErrorMessage>
+                   <FormErrorMessage>Email is required.</FormErrorMessage>
+                
                   <FormLabel fontSize="xs" marginTop="5">Gender</FormLabel>
                   <Box w="150px">
                   <Select 

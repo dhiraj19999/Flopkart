@@ -120,7 +120,7 @@ import {
                         required
                       />
                       <Text color="red" fontSize="xs">
-                      ----
+                      
                       </Text>
                     </>
                  
@@ -139,7 +139,7 @@ import {
                         required
                       />
                       <Text color="red" fontSize="xs">
-                      ----
+                      
                       </Text>
                     </>
              
