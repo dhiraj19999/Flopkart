@@ -1,0 +1,11 @@
+.productcomp {
+  border: 1px solid red;
+  display: flex;
+}
+.filtercomp {
+  flex: 1;
+}
+.productlist {
+  flex: 4;
+  background-color: burlywood;
+}
