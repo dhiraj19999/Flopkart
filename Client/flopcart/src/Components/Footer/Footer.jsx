@@ -23,6 +23,7 @@ const Footer = () => {
       bg={useColorModeValue("#172337", "gray.900")}
       color={useColorModeValue("#f0f0f0", "gray.200")}
       fontSize="12px"
+      ml={{ base: 0, md: 60 }}
     >
       <Container as={Stack} maxW={"8xl"} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 3, md: 4, lg: 6 }} spacing={5}>
@@ -38,7 +39,7 @@ const Footer = () => {
         borderColor={useColorModeValue("#454d5e", "gray.700")}
       >
         <Container
-          maxW={"8xl"}
+          maxW={"6xl"}
           py={4}
           direction={{ base: "column", md: "row" }}
           spacing={4}

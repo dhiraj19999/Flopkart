@@ -9,7 +9,6 @@ import Menus from "./Menus";
 import Hamburger from "./Hamburger";
 
 const Navbar = () => {
-  
   return (
     <Flex
       // border={nav.border}
@@ -19,6 +18,7 @@ const Navbar = () => {
       px={nav.px}
       pos="sticky"
       top="0"
+      zIndex="1"
     >
       {/* Logo & search */}
       <HStack
