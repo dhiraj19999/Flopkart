@@ -1,42 +1,3 @@
-export const navData = [
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100",
-      text: "Top Offers",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",
-      text: "Grocery",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100",
-      text: "Mobile",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100",
-      text: "Fashion",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100",
-      text: "Electronics",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/ee162bad964c46ae.png?q=100",
-      text: "Home",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100",
-      text: "Appliances",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100",
-      text: "Travel",
-    },
-    {
-      url: "https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100",
-      text: "Beauty, Toys & More",
-    },
-  ];
-  
 
 export const banerData = [
     { id: 1, url: 'https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/beacdf4c7793a4b2.jpg?q=50'},
@@ -47,4 +8,49 @@ export const banerData = [
     { id: 6, url: 'https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/fd23a7fdee81c3de.jpg?q=50'},
     { id: 7, url: 'https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/f2af1d36a53fce46.jpg?q=50'},
     { id: 8, url: 'https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/e807adf684e04ec9.jpeg?q=50'}
+]
+export const electronics = [
+    {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",
+        title: "Grocery"
+    },
+    
+    {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100",
+        title: "Mobiles"
+    },
+    {
+
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/c12afc017e6f24cb.png?q=100",
+        title: "Fashion"
+    },
+    {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100",
+        title: "Electronics"
+    },
+    {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100",
+        title: "Home"
+    },
+    {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100",
+        title: "Appliances"
+    },
+    {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100",
+        title: "Travel"
+    },
+    {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100",
+        title: "Top Offers"
+    },
+     {
+        image: "https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100",
+        title: "Beauty, Toya & More"
+    }
+    ,
+    {
+        image: "https://rukminim1.flixcart.com/fk-p-flap/128/128/image/05d708653beff580.png?q=100",
+        title: "Two Wheelers"
+    }
 ]

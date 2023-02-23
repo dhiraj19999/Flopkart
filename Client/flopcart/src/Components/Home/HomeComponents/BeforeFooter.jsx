@@ -4,7 +4,7 @@ import React from 'react';
 function BeforeFooter() {
     return (
         <div> <hr />
-            <Box p="25px" bg="#FFFFFF" color={"#757171"} borderTop="2px solid silver" display={{base:"none", md:"block", lg:"block"}}>
+            <Box p="25px" bg="#FFFFFF" color={"#757171"} borderTop="2px solid silver" display={{base:"none",sm:"block", md:"block", lg:"block"}}>
             <Text fontSize={"14px"} pb="9px" fontWeight={"bold"} textAlign={"left"} >    Top Stories:Brand Directory</Text>
             <Text fontSize={"12px"} pb="9px" textAlign={"left"} >    MOST SEARCHED FOR ON FLIPKART:Flipkart Axis Bank Super Elite Credit cardPrimebook LaptopsBounce Infinity E1Buy Laptop on EMIInfinix Zero Book UltraOPPO Reno8 5GOPPO Reno8 Pro 5GFresh Flower BouquetHoli HampersHoli GiftsBouquetOneplus MonitorsSell Old Mobile PhonesPremium LaptopsElectronics StorePhone coverVivo Y33TInfinix Y1 PlusOkaya Electric Vehiclesbgauss electric scooterOPPO Reno7 Pro 5GiPhone 13iPhone 13 ProiPhone 13 Pro MaxiPhone 13 MiniGoogle Pixel 6a coversFlipkart QuickAmpere MagnusFlipkart Help CentreOnline Boat StoreCovers from Rs 99Flipkart Track OrdersFlipkart Manage OrdersFlipkart Return OrdersFlipkart Gift Cards StoreFlipkart Axis Bank Credit CardFlipkart Pay Later
 
