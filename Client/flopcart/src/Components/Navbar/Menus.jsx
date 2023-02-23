@@ -15,7 +15,6 @@ import { HiOutlineTrendingUp } from "react-icons/hi";
 
 import { Flex, HStack, Spacer, Tag, Text } from "@chakra-ui/react";
 
-
 import DropDownMenu from "./DropDown";
 // import UserAvatar from "./UserAvatar";
 import Hover from "../signup/Hover";
@@ -28,7 +27,7 @@ const Menus = () => {
       {/* <Spacer /> */}
       {/* <DropDownMenu menuList={menuListUser} menuName="Ryan" /> */}
 
-      <Hover  />
+      <Hover />
 
       <Spacer />
 
@@ -74,6 +73,7 @@ export default Menus;
 //   { icon: BsSuitHeart, text: "Wishlist" },
 //   { icon: RiCoupon3Line, text: "Coupons" },
 // ];
+
 
 // Dropdown option under More menu
 const menuListMore = [

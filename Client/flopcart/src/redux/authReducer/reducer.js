@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: false,
         isLoggedIn: true,
-        user: action.payload,
+        user: action.payload.data,
       };
     case LOGIN_ERROR:
       return {

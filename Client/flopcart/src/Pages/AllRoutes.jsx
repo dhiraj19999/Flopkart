@@ -5,6 +5,7 @@ import Checkout from "./Checkout/Checkout";
 import Home from "./Home/Home";
 import Product from "./ProductPage/Product";
 import SingleProduct from "./SingleProduct/SingleProduct";
+import UserAccount from "./UserAccount/UserAccount";
 
 const AllRoutes = () => {
   return (
@@ -22,6 +23,9 @@ const AllRoutes = () => {
         Cart
       </Route>
       <Route path="/checkout" element={<Checkout />}>
+        Checkout
+      </Route>
+      <Route path="/myprofile" element={<UserAccount />}>
         Checkout
       </Route>
     </Routes>
