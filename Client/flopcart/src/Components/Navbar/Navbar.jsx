@@ -9,6 +9,7 @@ import Menus from "./Menus";
 import Hamburger from "./Hamburger";
 
 const Navbar = () => {
+  
   return (
     <Flex
       // border={nav.border}

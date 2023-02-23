@@ -87,7 +87,7 @@ export const registerRequest = () => {
         });
         const data = await response.json();
         console.log(data);
-        dispatch(loginSuccess(data.token));
+        dispatch(loginSuccess(data));
       } catch (error) {
         dispatch(loginError(error));
       }
