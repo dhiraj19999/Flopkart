@@ -17,6 +17,7 @@ const Home = () => {
       
         <Box>
            <Category/>
+           
             <Banner />
             <Electronics/>
             <Toy/>
