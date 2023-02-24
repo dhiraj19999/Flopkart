@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { SingleProduc } from "../../Components/SingleProduct/SingleProduct";
 
 const SingleProduct = () => {
   return (
-    <div>SingleProduct</div>
-  )
-}
+    <div>
+      <SingleProduc />
+    </div>
+  );
+};
 
-export default SingleProduct
+export default SingleProduct;

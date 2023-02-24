@@ -1,0 +1,19 @@
+.single_container {
+  display: flex;
+  background-color: #f1f3f6;
+  margin: auto;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.single_img {
+  background-color: #fff;
+  flex: 1;
+  border: 1px solid;
+}
+.singlecard_detail {
+  background-color: #fff;
+  flex: 2;
+  padding-left: 10px;
+  padding-top: 10px;
+  border: 1px solid red;
+}
