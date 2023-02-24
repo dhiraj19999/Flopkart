@@ -9,14 +9,12 @@
   background-color: #fff;
   flex: 1;
   padding: 10px;
-  border: 1px solid;
 }
 .singlecard_detail {
   background-color: #fff;
   flex: 2;
   padding-left: 10px;
   padding-top: 10px;
-  border: 1px solid red;
 }
 
 .offers {

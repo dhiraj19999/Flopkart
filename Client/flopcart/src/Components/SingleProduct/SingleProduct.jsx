@@ -1,4 +1,14 @@
-import { Divider, Flex, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Divider,
+  Flex,
+  Image,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { FaShoppingCart } from "react-icons/fa";
+import { BsFillLightningFill } from "react-icons/bs";
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
@@ -30,6 +40,9 @@ export const SingleProduc = () => {
 
     console.log(crImg);
   }, [id]);
+  const addToCart = () => {
+    console.log("added to cart");
+  };
   return (
     <div className={styles.single_container}>
       <div className={styles.single_img}>
@@ -55,6 +68,29 @@ export const SingleProduc = () => {
               />
             );
           })}
+        </Flex>
+        <Flex gap={"10px"} marginTop="10px">
+          <Button
+            width={"50%"}
+            borderRadius="0"
+            background={"#ff9f00"}
+            colorScheme="yellow"
+            color={"#fff"}
+            onClick={addToCart}
+          >
+            <FaShoppingCart />
+            {"  "}Add to Cart
+          </Button>
+          <Button
+            width={"50%"}
+            borderRadius="0"
+            background={"#fb641b"}
+            color="#fff"
+            colorScheme={"orange"}
+          >
+            <BsFillLightningFill />
+            {"  "} Buy Now
+          </Button>
         </Flex>
       </div>
       <div className={styles.singlecard_detail}>
