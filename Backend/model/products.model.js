@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const reqString = { type: String, required: true };
+const reqNumber = { type: Number, required: true };
 
 const allProductsSchema = mongoose.Schema({
   uniq_id: String,
@@ -9,8 +10,8 @@ const allProductsSchema = mongoose.Schema({
   product_name: reqString,
   product_category_tree: String,
   pid: String,
-  retail_price: reqString,
-  discounted_price: reqString,
+  retail_price: reqNumber,
+  discounted_price: reqNumber,
   image: reqString,
   is_FK_Advantage_product: String,
   description: String,
