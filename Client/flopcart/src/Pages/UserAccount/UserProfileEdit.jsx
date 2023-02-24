@@ -16,21 +16,29 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { SmallCloseIcon } from "@chakra-ui/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { loadData, saveData } from "../../utils/accessLocalstorage";
 
 const initState = {
-  firstName: "Aniket",
-  lastName: "Pandey",
-  email: "aniket@gmail.com",
-  gender: "Male",
-  mobile: "9956470719",
-  password: "aniket",
-  avatar: "https://avatars.githubusercontent.com/u/107461782?v=4",
+  firstName: loadData("firstName") || "NA",
+  lastName: loadData("lastName") || "NA",
+  email: loadData("email") || "NA",
+  gender: loadData("gender") || "NA",
+  mobile: loadData("mobile") || "NA",
+  // password: loadData("password") || "aniket",
+  avatar:
+    loadData("avatar") ||
+    "https://avatars.githubusercontent.com/u/107461782?v=4",
 };
 
 const UserProfileEdit = () => {
   const [isEditable, setEditable] = useState(true);
   const [formData, setFormData] = useState(initState);
+  // const [updated, setUpdated] = useState(false);
+
+  // useEffect(() => {
+  //   console.log("loading page");
+  // }, [updated]);
 
   const handleEtidalble = () => {
     setEditable((prev) => !prev);
@@ -39,6 +47,57 @@ const UserProfileEdit = () => {
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleUpdate = async () => {
+    let ID = loadData("_id");
+
+    let payload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      gender: formData.gender,
+      mobile: formData.mobile,
+    };
+
+    // console.log(ID, payload);
+
+    fetch("https://drab-pants-bass.cyclic.app/user/update/" + ID, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        getUpdatedUserData(ID);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const getUpdatedUserData = async (userID) => {
+    // setUpdated(true);
+    fetch("https://drab-pants-bass.cyclic.app/user/all-users/" + userID, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        saveData("firstName", res.data[0].firstName);
+        saveData("lastName", res.data[0].lastName);
+        saveData("email", res.data[0].email);
+        saveData("gender", res.data[0].gender);
+        saveData("mobile", res.data[0].mobile);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -98,10 +157,11 @@ const UserProfileEdit = () => {
         </FormControl>
 
         {/* Details */}
-        <FormControl id="userName" isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable}>
           <FormLabel>First name</FormLabel>
           <Input
             placeholder="first name"
+            name="firstName"
             _placeholder={{ color: "gray.500" }}
             type="text"
             value={formData.firstName}
@@ -109,10 +169,11 @@ const UserProfileEdit = () => {
           />
         </FormControl>
 
-        <FormControl id="userName" isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable}>
           <FormLabel>Last name</FormLabel>
           <Input
             placeholder="last name"
+            name="lasstName"
             _placeholder={{ color: "gray.500" }}
             type="text"
             value={formData.lastName}
@@ -120,9 +181,10 @@ const UserProfileEdit = () => {
           />
         </FormControl>
 
-        <FormControl id="userName" isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable}>
           <FormLabel>Gender</FormLabel>
           <RadioGroup
+            name="gender"
             onChange={(e) => handleOnChange(e)}
             value={formData.gender}
           >
@@ -134,9 +196,10 @@ const UserProfileEdit = () => {
           </RadioGroup>
         </FormControl>
 
-        <FormControl id="email" isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable}>
           <FormLabel>Email address</FormLabel>
           <Input
+            name="email"
             placeholder="your-email@example.com"
             _placeholder={{ color: "gray.500" }}
             type="email"
@@ -145,7 +208,18 @@ const UserProfileEdit = () => {
           />
         </FormControl>
 
-        <FormControl id="password" isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable}>
+          <FormLabel>Mobile</FormLabel>
+          <Input
+            name="mobile"
+            placeholder="mobile"
+            _placeholder={{ color: "gray.500" }}
+            type="text"
+            value={formData.mobile}
+            onChange={(e) => handleOnChange(e)}
+          />
+        </FormControl>
+        {/* <FormControl isDisabled={isEditable}>
           <FormLabel>Password</FormLabel>
           <Input
             placeholder="password"
@@ -154,7 +228,7 @@ const UserProfileEdit = () => {
             value={formData.password}
             onChange={(e) => handleOnChange(e)}
           />
-        </FormControl>
+        </FormControl> */}
 
         <Stack spacing={6} direction={["column", "row"]}>
           <Button
@@ -174,6 +248,7 @@ const UserProfileEdit = () => {
             _hover={{
               bg: "blue.500",
             }}
+            onClick={handleUpdate}
           >
             Submit
           </Button>
