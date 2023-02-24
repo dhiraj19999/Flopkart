@@ -9,3 +9,15 @@
   flex: 4;
   border: 1px solid teal;
 }
+
+@media all and (min-width: 728px) and (max-width: 1250px) {
+  .filtercomp {
+    flex: 2;
+  }
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+  .filtercomp {
+    display: none;
+  }
+}
