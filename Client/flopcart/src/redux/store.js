@@ -7,7 +7,8 @@ import {
 
 import thunk from "redux-thunk";
 import {reducer as authReducer} from "./authReducer/reducer"
-const rootReducer = combineReducers({authReducer});
+import {cartReducer} from "./cartReducer/reducer"
+const rootReducer = combineReducers({authReducer,cartReducer});
 
 const composer = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
 

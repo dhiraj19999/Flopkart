@@ -111,7 +111,7 @@ const Signup = () => {
               marginTop="-4"
             />
             <div style={{ display: 'flex' }}>
-              <Box height="32rem" bg="#2874f0" width="16rem" p="35px">
+              <Box display={{base:"none",md:"block",lg:"block"}} height="32rem" bg="#2874f0" width="16rem" p="35px">
                 <Text fontWeight="600" color="white" fontSize="2xl">
                   Looks like you're new here!
                 </Text>
