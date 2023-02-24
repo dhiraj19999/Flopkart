@@ -1,0 +1,10 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.7rem;
+}
+@media all and (min-width: 728px) and (max-width: 1250px) {
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+}
