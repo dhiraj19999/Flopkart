@@ -100,7 +100,8 @@ export const SingleProduc = () => {
           <Flex>
             <Image
               src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-              width={"3%"}
+              width={"25px"}
+              height="25px"
             />
             <Text>
               <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -122,7 +123,8 @@ export const SingleProduc = () => {
           <Flex>
             <Image
               src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-              width={"3%"}
+              width={"25px"}
+              height="25px"
             />
             <Text>
               <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -144,7 +146,8 @@ export const SingleProduc = () => {
           <Flex>
             <Image
               src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-              width={"3%"}
+              width={"25px"}
+              height="25px"
             />
             <Text>
               <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -166,7 +169,8 @@ export const SingleProduc = () => {
           <Flex>
             <Image
               src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-              width={"3%"}
+              width={"25px"}
+              height="25px"
             />
             <Text marginLeft={"10px"}>
               Buy for 5 get ₹500 off your Next Buy
@@ -193,7 +197,8 @@ export const SingleProduc = () => {
             <Flex>
               <Image
                 src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-                width={"3%"}
+                width={"25px"}
+                height="25px"
               />
               <Text>
                 <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -215,7 +220,8 @@ export const SingleProduc = () => {
             <Flex>
               <Image
                 src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-                width={"3%"}
+                width={"25px"}
+                height="25px"
               />
               <Text>
                 <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -236,7 +242,8 @@ export const SingleProduc = () => {
             <Flex>
               <Image
                 src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-                width={"3%"}
+                width={"25px"}
+                height="25px"
               />
               <Text>
                 <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -257,7 +264,8 @@ export const SingleProduc = () => {
             <Flex>
               <Image
                 src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90"
-                width={"3%"}
+                width={"25px"}
+                height="25px"
               />
               <Text>
                 <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -278,7 +286,8 @@ export const SingleProduc = () => {
             <Flex>
               <Image
                 src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-                width={"3%"}
+                width={"25px"}
+                height="25px"
               />
               <Text>
                 <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -299,7 +308,8 @@ export const SingleProduc = () => {
             <Flex>
               <Image
                 src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-                width={"3%"}
+                width={"25px"}
+                height="25px"
               />
               <Text>
                 <Text as="span" fontWeight={"500"} marginLeft="10px">
@@ -321,7 +331,8 @@ export const SingleProduc = () => {
             <Flex>
               <Image
                 src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
-                width={"3%"}
+                width={"25px"}
+                height="25px"
               />
               <Text>
                 <Text as="span" fontWeight={"500"} marginLeft="10px">
