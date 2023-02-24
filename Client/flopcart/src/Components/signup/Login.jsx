@@ -69,7 +69,7 @@ const Login = () => {
         cursor="pointer"
         // border={'1px solid #dbdbdb'}
       >
-        {isLoggedIn ? loadData("user_name") : "Login"}
+        {isLoggedIn ? loadData("firstName") : "Login"}
       </Text>
       <Modal isOpen={isOpen} onClose={onClose} size="2xl" padding="0px">
         <ModalOverlay />

@@ -1,0 +1,28 @@
+.product_container {
+  margin: 10px;
+}
+
+.sort_container {
+  display: flex;
+  gap: 15px;
+  margin: 10px;
+}
+.products_box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+
+  justify-content: center;
+}
+
+@media all and (min-width: 728px) and (max-width: 1250px) {
+  .products_box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+  .products_box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

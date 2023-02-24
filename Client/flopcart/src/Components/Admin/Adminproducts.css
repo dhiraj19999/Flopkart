@@ -1,0 +1,74 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+   
+    text-align: center;
+    font-family: arial;
+    display: block;
+
+
+  }
+  .firp{
+    display: flex;
+  }
+  .product-price{
+    margin-top: -10px;
+  }
+.product-price p{
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.last-pricespan{
+    color: indianred;
+    text-decoration: line-through;
+   
+}
+.last-price{
+    margin-left: -20px;
+}
+.new-price{
+    
+   font-weight: bold;
+    
+}
+.main{
+    width: 900px;
+    margin-left: 330px;
+    height: 200px;
+}
+  .product--image {
+    
+    height: 200px;
+    object-fit: cover;
+    display: inline-block;
+  }
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+ 
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  .pag button{
+   color: pink;
+    background-color: black;
+
+  }
+  

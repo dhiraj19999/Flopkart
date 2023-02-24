@@ -250,6 +250,64 @@ userRouter.get("/all-users", async (req, res) => {
   }
 });
 
+// get user by id
+
+/**
+ * @swagger
+ * /user/all-users/{id}:
+ *    get:
+ *      summary: To get the details of  user by its id
+ *      tags: [User]
+ *      parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: Numeric ID of the user to retrieve.
+ *         schema:
+ *           type: integer
+ *      responses:
+ *        200:
+ *          description: Successfully, getting the user data
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  data:
+ *                    $ref: '#/components/schemas/User'
+ *                  status:
+ *                    type: string
+ *                    description: Success
+ *        500:
+ *          description: Something went wrong
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *                  status:
+ *                    type: string
+ *                    description: Failed
+ */
+
+userRouter.get("/all-users/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const users = await UserModel.find({ _id: id });
+    res.status(201).json({
+      status: "Success",
+      data: users,
+    });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ message: "Something went wrong", status: "Failed" });
+  }
+});
+
 /**
  * @swagger
  * /user/delete/{id}:

@@ -25,13 +25,19 @@ const reducer = (state = initialState, action) => {
       };
     case LOGIN_SUCCESS:
       saveData("is_auth", true);
-      saveData("user_name", action.payload.data.firstName);
+      saveData("_id", action.payload.data._id);
+      saveData("firstName", action.payload.data.firstName);
+      saveData("lastName", action.payload.data.lastName);
+      saveData("email", action.payload.data.email);
+      saveData("gender", action.payload.data.gender);
+      saveData("mobile", action.payload.data.mobile);
+      saveData("password", action.payload.data.password);
       saveData("token", action.payload.token);
       return {
         ...state,
         loading: false,
         isLoggedIn: true,
-        user: action.payload,
+        user: action.payload.data,
       };
     case LOGIN_ERROR:
       return {
@@ -42,7 +48,12 @@ const reducer = (state = initialState, action) => {
       };
     case LOGOUT:
       localStorage.removeItem("is_auth");
-      localStorage.removeItem("user_name");
+      localStorage.removeItem("firstName");
+      localStorage.removeItem("lastName");
+      localStorage.removeItem("email");
+      localStorage.removeItem("gender");
+      localStorage.removeItem("mobile");
+      localStorage.removeItem("password");
       localStorage.removeItem("token");
       return {
         ...state,

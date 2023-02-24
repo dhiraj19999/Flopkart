@@ -1,0 +1,44 @@
+.product_card {
+  position: relative;
+  transition: box-shadow 0.2s ease-in-out;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.image_hover {
+  opacity: 0;
+  transition: opacity 0.3s;
+  height: 330px;
+}
+
+.image_main {
+  height: 330px;
+}
+.product_card:hover .image_hover {
+  opacity: 1;
+}
+.product_card:hover .pro_name {
+  color: #2874f0;
+}
+.flk_assured {
+  width: 30%;
+}
+
+.product_card:hover {
+  box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%);
+}
+
+@media all and (min-width: 728px) and (max-width: 1250px) {
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+  .flk_assured {
+    display: none;
+  }
+  .image_main {
+    height: 250px;
+  }
+  .image_hover {
+    height: 250px;
+  }
+}
