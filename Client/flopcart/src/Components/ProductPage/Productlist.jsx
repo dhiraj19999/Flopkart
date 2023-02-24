@@ -1,25 +1,38 @@
-import { Flex, Tab, TabList, Tabs, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Skeleton,
+  Stack,
+  Tab,
+  TabList,
+  Tabs,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getData, getDataReq } from "../../redux/dataReducer/action";
 import { ProductCard } from "./ProductCard";
 import styles from "./Productlist.module.css";
 export const Productlist = () => {
   const dispatch = useDispatch();
   const { name } = useParams();
-  const { isLoading, products } = useSelector((store) => store.dataReducer);
+  const { products } = useSelector((store) => store.dataReducer);
   const [active, setActive] = useState("pop");
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(50);
-  console.log(page);
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
     dispatch(getData(name));
+    setTimeout(() => {
+      setloading(false);
+    }, 3000);
   }, [name, dispatch]);
 
   const sortBylow = (q, p) => {
+    setloading(true);
     setActive(p);
     dispatch(
       getData(name, {
@@ -28,9 +41,13 @@ export const Productlist = () => {
         },
       })
     );
+    setTimeout(() => {
+      setloading(false);
+    }, 2000);
   };
 
   const pagination = (q) => {
+    setloading(true);
     setPage(page + q);
     dispatch(
       getData(name, {
@@ -39,11 +56,30 @@ export const Productlist = () => {
         },
       })
     );
+    setTimeout(() => {
+      setloading(false);
+    }, 2000);
     if (products.length == 0) {
       dispatch(getData(name));
     }
   };
-
+  const paginationfordirectclick = (q) => {
+    setloading(true);
+    setPage(q);
+    dispatch(
+      getData(name, {
+        params: {
+          page: page,
+        },
+      })
+    );
+    setTimeout(() => {
+      setloading(false);
+    }, 2000);
+    if (products.length == 0) {
+      dispatch(getData(name));
+    }
+  };
   return (
     <div className={styles.product_container}>
       <Text fontWeight={"500"} fontSize={"xl"} margin="10px" marginTop={"25px"}>
@@ -88,7 +124,18 @@ export const Productlist = () => {
       </div>
       <div className={styles.products_box}>
         {products?.map((el, i) => {
-          return <ProductCard {...el} key={i} />;
+          return !loading ? (
+            <Link to={`/product/${el._id}`}>
+              <ProductCard {...el} key={i} />
+            </Link>
+          ) : (
+            <Stack>
+              <Skeleton height="300px" />
+              <Skeleton height="25px" />
+              <Skeleton height="20px" />
+              <Skeleton height="10px" />
+            </Stack>
+          );
         })}
       </div>
       <Flex justifyContent={"center"} alignItems="center">
@@ -121,7 +168,7 @@ export const Productlist = () => {
                   height={"32px"}
                   w="32px"
                   borderRadius={"50%"}
-                  onClick={() => pagination(1)}
+                  onClick={() => paginationfordirectclick(i + 1)}
                   fontWeight="500"
                 >
                   {item + 1}

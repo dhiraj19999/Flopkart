@@ -1,13 +1,16 @@
 .productcomp {
-  border: 1px solid red;
   display: flex;
+  background-color: #f1f3f6;
+  padding: 10px;
+  gap: 10px;
 }
 .filtercomp {
   flex: 1;
+  background-color: #fff;
 }
 .productlist {
   flex: 4;
-  border: 1px solid teal;
+  background-color: #fff;
 }
 
 @media all and (min-width: 728px) and (max-width: 1250px) {
