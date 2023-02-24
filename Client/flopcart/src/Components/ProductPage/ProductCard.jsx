@@ -55,7 +55,7 @@ export const ProductCard = ({
         />
       </Flex>
       <Text marginLeft={"10px"} color="blackAlpha.900" fontWeight={"500"}>
-        ₹{retail_price - discounted_price}{" "}
+        ₹{discounted_price}{" "}
         <Text
           as="span"
           textDecoration={"line-through"}

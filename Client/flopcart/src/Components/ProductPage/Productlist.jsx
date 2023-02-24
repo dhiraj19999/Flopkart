@@ -14,7 +14,18 @@ export const Productlist = () => {
   useEffect(() => {
     dispatch(getData(name));
     console.log(products);
-  }, [name]);
+  }, [name, dispatch]);
+
+  const sortBylow = (q, p) => {
+    setActive(p);
+    dispatch(
+      getData(name, {
+        params: {
+          sortBy: q,
+        },
+      })
+    );
+  };
 
   return (
     <div className={styles.product_container}>
@@ -38,7 +49,7 @@ export const Productlist = () => {
           Popularity
         </Text>
         <Text
-          onClick={() => setActive("low")}
+          onClick={() => sortBylow("asc", "low")}
           color={`${active == "low" ? "#2874F0" : ""}`}
           fontWeight={`${active == "low" ? "500" : ""}`}
           borderBottom={`${active == "low" ? "2px solid #2874F0" : ""}`}
@@ -48,7 +59,7 @@ export const Productlist = () => {
           Price --Low to high
         </Text>
         <Text
-          onClick={() => setActive("high")}
+          onClick={() => sortBylow("desc", "high")}
           color={`${active == "high" ? "#2874F0" : ""}`}
           fontWeight={`${active == "high" ? "500" : ""}`}
           borderBottom={`${active == "high" ? "2px solid #2874F0" : ""}`}

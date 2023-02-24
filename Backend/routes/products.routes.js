@@ -137,7 +137,7 @@ productRouter.get("/", async (req, res) => {
       })
         .limit(limit)
         .skip(limit * page)
-        .sort({ retail_price: a });
+        .sort({ discounted_price: a });
       res.status(201).json({ data: product, status: "Success" });
       return;
     } else if (q) {
