@@ -1,9 +1,9 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Tab, TabList, Tabs, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getData } from "../../redux/dataReducer/action";
+import { getData, getDataReq } from "../../redux/dataReducer/action";
 import { ProductCard } from "./ProductCard";
 import styles from "./Productlist.module.css";
 export const Productlist = () => {
@@ -11,9 +11,12 @@ export const Productlist = () => {
   const { name } = useParams();
   const { isLoading, products } = useSelector((store) => store.dataReducer);
   const [active, setActive] = useState("pop");
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(50);
+  console.log(page);
+
   useEffect(() => {
     dispatch(getData(name));
-    console.log(products);
   }, [name, dispatch]);
 
   const sortBylow = (q, p) => {
@@ -25,6 +28,20 @@ export const Productlist = () => {
         },
       })
     );
+  };
+
+  const pagination = (q) => {
+    setPage(page + q);
+    dispatch(
+      getData(name, {
+        params: {
+          page: page,
+        },
+      })
+    );
+    if (products.length == 0) {
+      dispatch(getData(name));
+    }
   };
 
   return (
@@ -39,7 +56,7 @@ export const Productlist = () => {
         <Text fontWeight={"500"}>Sort By</Text>
         <Text
           _active={{ color: "blue" }}
-          onClick={() => setActive("pop")}
+          onClick={() => sortBylow("", "pop")}
           color={`${active == "pop" ? "#2874F0" : ""}`}
           fontWeight={`${active == "pop" ? "500" : ""}`}
           borderBottom={`${active == "pop" ? "2px solid #2874F0" : ""}`}
@@ -74,6 +91,61 @@ export const Productlist = () => {
           return <ProductCard {...el} key={i} />;
         })}
       </div>
+      <Flex justifyContent={"center"} alignItems="center">
+        <Tabs p={"10px"}>
+          <TabList borderBottom={0}>
+            {page > 1 ? (
+              <Text
+                color={"#2874f0"}
+                fontWeight="600"
+                lineHeight="32px"
+                p="0 25px"
+                cursor={"pointer"}
+                onClick={() => pagination(-1)}
+              >
+                PREVIOUS
+              </Text>
+            ) : (
+              "        "
+            )}
+
+            {Array.from({ length: 4 }, (v, i) => i).map((item, i) => {
+              return (
+                <Tab
+                  key={i}
+                  cursor="pointer"
+                  fontSize={"15px"}
+                  _selected={{ bg: "", color: "" }}
+                  bg={page === i + 1 ? "#2874f0" : ""}
+                  color={page === i + 1 ? "#fff" : ""}
+                  height={"32px"}
+                  w="32px"
+                  borderRadius={"50%"}
+                  onClick={() => pagination(1)}
+                  fontWeight="500"
+                >
+                  {item + 1}
+                </Tab>
+              );
+            })}
+
+            {page < total / 10 - 1 ? (
+              <Text
+                color={"#2874f0"}
+                fontWeight="600"
+                lineHeight="32px"
+                p="0 25px"
+                cursor={"pointer"}
+                onClick={() => pagination(1)}
+              >
+                NEXT
+              </Text>
+            ) : (
+              "    "
+            )}
+          </TabList>
+        </Tabs>
+      </Flex>
     </div>
   );
 };

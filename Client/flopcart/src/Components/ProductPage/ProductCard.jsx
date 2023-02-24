@@ -11,7 +11,9 @@ export const ProductCard = ({
   product_rating,
 }) => {
   const img = JSON.parse(image);
-  const dis_percenatge = Math.ceil((discounted_price / retail_price) * 100);
+  const dis_percenatge = Math.ceil(
+    ((retail_price - discounted_price) / retail_price) * 100
+  );
   return (
     <div className={styles.product_card}>
       <Flex position={"absolute"} top="10px" right={"10px"} zIndex="4">
