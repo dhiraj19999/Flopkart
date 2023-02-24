@@ -22,38 +22,38 @@ const responsive = {
 };
 const sliderImageUrl = [
   //First image url
-  {
+  {id:1,
     image:
       "http://img6a.flixcart.com/image/shoe/g/6/e/red-1216-nuride-41-original-imaedsa82yrz5hxu.jpeg",
       brand:"Nuride",
       retail_price:1999
   },
-  {
+  {id:2,
     image:
       "http://img5a.flixcart.com/image/shoe/k/t/g/beige-sb-whtsldrb-beige-shoebuzz-7-1000x1000-imaejgx4pkskscjm.jpeg",
       brand:"ShoeBuzz",
       retail_price:799
   },
   //Second image url
-  {
+  {id:3,
     image:
       "http://img6a.flixcart.com/image/shoe/c/s/v/white-gl-galaxy-5-glacier-9-original-imaefp8hkszjbvnq.jpeg",
       brand:"Glacier",
       retail_price:629
   },
-  {
+  {id:4,
     image:
       "http://img5a.flixcart.com/image/shoe/7/x/a/island-blue-black-indigo-blue-asics-12-1000x1000-imaegdyh2awrm5vu.jpeg",
       brand:"Asics",
       retail_price:9499
   },
-  {
+  {id:5,
     image:
       "http://img6a.flixcart.com/image/shoe/u/r/d/black-red-jqr-12blade-3-jqr-44-original-imaeh7y5fangcfpm.jpeg",
       brand:"JQR",
       retail_price:1299
   },
-  {
+  {id:6,
     image:
       "http://img5a.flixcart.com/image/kit/q/n/w/jaspo-1-jaspo-saphire-dual-shoe-skates-comb-size-11-uk-for-age-original-imaedwyfbzbu2jdz.jpeg",
       brand:"JASPO",

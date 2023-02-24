@@ -22,38 +22,38 @@ const responsive = {
 };
 const sliderImageUrl = [
   //First image url
-  {
+  {id:1,
     image:
       "http://img5a.flixcart.com/image/usb-gadget/b/x/b/portable-1024-jrb-original-imaejgwyededybzp.jpeg",
       brand:"JRB",
       retail_price:499
   },
-  {
+  {id:2,
     image:
       "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/y/n/q/shortkut-enterprises-model-no-496-original-imaeggg6tgwhzeg4.jpeg",
       brand:"Shortkut enterprises",
       retail_price:1200
   },
   //Second image url
-  {
+  {id:3,
     image:
       "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/m/d/x/shortkut-enterprises-model-no-485-1100x1100-imaed2xjdgkfy5sh.jpeg",
       brand:"Shortkut enterprises",
       retail_price:1200
   },
-  {
+  {id:4,
     image:
       "http://img5a.flixcart.com/image/usb-gadget/b/x/b/portable-1024-jrb-original-imaejgwyededybzp.jpeg",
       brand:"JRB",
       retail_price:499
   },
-  {
+  {id:5,
     image:
       "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/m/d/x/shortkut-enterprises-model-no-485-1100x1100-imaed2xjdgkfy5sh.jpeg",
       brand:"Shortkut enterprises",
       retail_price:1200
   },
-  {
+  {id:6,
     image:
       "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/t/d/v/shortkut-enterprises-model-no-467-1100x1100-imaeggahdjzcbmj4.jpeg",
       brand:"Shortkut enterprises",

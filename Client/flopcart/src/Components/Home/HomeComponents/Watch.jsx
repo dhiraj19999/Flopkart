@@ -22,38 +22,38 @@ const responsive = {
 };
 const sliderImageUrl = [
   //First image url
-  {
+  {id:1,
     image:
       "http://img5a.flixcart.com/image/watch/s/y/x/co6394a1-cobra-paris-original-imae3ewvtzeazghm.jpeg",
       brand:"Rochees",
       retail_price:18995
   },
-  {
+  {id:2,
     image:
       "http://img5a.flixcart.com/image/watch/a/y/m/r8851116001-maserati-time-original-imaeafe6hf6zvhmm.jpeg",
       brand:"Aries",
       retail_price:24400
   },
   //Second image url
-  {
+  {id:3,
     image:
       "http://img6a.flixcart.com/image/watch/d/3/d/uft-tsw-005-bk-br-t-star-original-imaecgzggrcdhm5x.jpeg",
       brand:"Camerii",
       retail_price:999
   },
-  {
+  {id:4,
     image:
       "http://img6a.flixcart.com/image/watch/a/y/m/r8851116001-maserati-time-original-imae9zxykwzyvb6z.jpeg",
       brand:"Vizion",
       retail_price:24400
   },
-  {
+  {id:5,
     image:
       "http://img6a.flixcart.com/image/watch/d/3/d/uft-tsw-005-bk-br-t-star-1000x1000-imaecgzggrcdhm5x.jpeg",
       brand:"Aries",
       retail_price:999
   },
-  {
+  {id:6,
     image:
       "http://img5a.flixcart.com/image/watch/e/j/g/wy16b-alfajr-original-imaecgzzfywury4r.jpeg",
       brand:"Alfajr",
@@ -96,7 +96,7 @@ function Deal() {
         {sliderImageUrl.map((imageUrl, index) => {
           return (
             <div className="slider" key={index}>
-                <div className='slider1'>
+                <div className='slider4'>
               <img src={imageUrl.image} alt="movie"/>
               </div>
               <div style={{marginTop:"10px"}}>

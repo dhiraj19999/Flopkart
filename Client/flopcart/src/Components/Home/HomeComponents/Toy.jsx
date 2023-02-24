@@ -2,7 +2,7 @@ import React from 'react';
 import { Box,Button, Img, Text, WrapItem} from '@chakra-ui/react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./deal.css";
+import "./toy.css";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -24,52 +24,46 @@ const sliderImageUrl = [
   //First image url
   {id:1,
     image:
-      "http://img5a.flixcart.com/image/short/6/2/h/altght-11-alisha-38-original-imaeh2d5uq9thnyg.jpeg",
-      brand:"Alisha",
-      retail_price:699
+      "http://img5a.flixcart.com/image/pet-toy/n/a/r/a35-kennel-original-imaea5c3qxyqzrgz.jpeg",
+      brand:"Kennel",
+      retail_price:190
   },
   {id:2,
     image:
-      "http://img5a.flixcart.com/image/short/5/z/c/altght4p-39-alisha-38-original-imaeh2d5ar6m55zd.jpeg",
-      brand:"Alisha",
-      retail_price:1199
+      "http://img5a.flixcart.com/image/pet-toy/r/7/m/01-snug-hug-1100x1100-imaeayzpsfpbjb4h.jpeg",
+      brand:"Snug Hug",
+      retail_price:499
   },
   //Second image url
   {id:3,
     image:
-      "http://img5a.flixcart.com/image/short/m/g/y/altht-3p-18-alisha-34-original-imaeh2d5zgnh6vsb.jpeg",
-      brand:"Alisha",
-      retail_price:1000
+      "http://img6a.flixcart.com/image/pet-toy/z/c/p/blue-lion-fish-creative-spinach-original-imaedhmjvh9q3htz.jpeg",
+      brand:"Creative Spinach",
+      retail_price:799
   },
   {id:4,
     image:
-      "http://img5a.flixcart.com/image/short/6/2/h/altght-11-alisha-38-original-imaeh2d5uq9thnyg.jpeg",
-      brand:"Alisha",
-      retail_price:699
+      "http://img6a.flixcart.com/image/pet-toy/y/a/r/pawzone-solid-rubber-dumble-toy-for-pets-pawzone-1100x1100-imaee4qmzfrfgzwg.jpeg",
+      brand:"Pawzone",
+      retail_price:200
   },
   {id:5,
     image:
-      "http://img5a.flixcart.com/image/short/5/z/c/altght4p-39-alisha-38-original-imaeh2d5ar6m55zd.jpeg",
-      brand:"Alisha",
-      retail_price:1199
-  },
-  {id:6,
-    image:
-      "http://img5a.flixcart.com/image/short/u/4/a/altht-3p-21-alisha-38-original-imaeh2d5vm5zbtgg.jpeg",
-      brand:"Alisha",
-      retail_price:999
+      "http://img5a.flixcart.com/image/sun-shade/7/r/x/240349-speedwav-original-imaehpqkaw9zh9mq.jpeg",
+      brand:"Speedwav",
+      retail_price:1400
   }
   
 ];
 
-function Deal() {
+function Toy() {
 
     return (
         <div> 
         <Box display={"flex"} mt="30px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p='1' bg='white' >
 
             <Box width="25%" h="300px" m="auto" textAlign={"center"} className="dealsBox" border={"1px solid black"}>
-                <Text paddingTop={{base:"120px", md:"120px", lg:"40px"}}  fontSize={{ base: '10px', md: '20px', lg: '30px' }}>Fashion Top Deals</Text>
+                <Text paddingTop={{base:"120px", md:"120px", lg:"40px"}}  fontSize={{ base: '10px', md: '20px', lg: '30px' }}>Shop for a cool summer</Text>
 
                 <WrapItem pt="30px">
                     <Button  fontSize={{ base: '6px', md: '9px', lg: '12px' }} m={"auto"} colorScheme='messenger'>
@@ -78,7 +72,7 @@ function Deal() {
                 
                         </Button>
                 </WrapItem>
-                <Img   src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/31d46a8fd93eeedd.jpg?q=90" alt="fg" width={"100%"}/>
+                <Img   src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/59d58e5ce057f2e6.jpg?q=90" alt="fg" width={"100%"}/>
 
             </Box>
             <Box w={{ base: '80%', md: '75%', lg: '84%' }} m="auto" className="OffSlider" border={"1px solid black"} h="300px">
@@ -96,7 +90,7 @@ function Deal() {
         {sliderImageUrl.map((imageUrl, index) => {
           return (
             <div className="slider" key={index}>
-                <div className='slider3'>
+                <div className='slider5'>
               <img src={imageUrl.image} alt="movie"/>
               </div>
               <div style={{marginTop:"10px"}}>
@@ -108,6 +102,7 @@ function Deal() {
         })}
       </Carousel>
     </div>
+               
             </Box>
         </Box>
         
@@ -115,4 +110,4 @@ function Deal() {
     );
 }
 
-export default Deal;
+export default Toy;

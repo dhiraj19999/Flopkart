@@ -4,14 +4,14 @@
     overflow:"hidden";
     height: 100%;
     cursor: pointer;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
   }
   
-  .slider1 img{
+  .slider4 img{
     width: 40%;
     margin: auto;
     cursor: pointer;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   
   .react-multi-carousel-list {
