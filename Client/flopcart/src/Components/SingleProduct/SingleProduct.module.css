@@ -8,6 +8,7 @@
 .single_img {
   background-color: #fff;
   flex: 1;
+  padding: 10px;
   border: 1px solid;
 }
 .singlecard_detail {

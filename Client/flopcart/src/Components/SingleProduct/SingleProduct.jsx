@@ -9,18 +9,54 @@ export const SingleProduc = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
   const [view, setView] = useState("noview");
+  const [imgd, setimg] = useState([]);
+  const [crImg, setCrImg] = useState("");
+
   const getData = () => {
     return axios
       .get(`https://drab-pants-bass.cyclic.app/products/${id}`)
-      .then((re) => setData(re.data.data))
+      .then((re) => {
+        setData(re.data.data);
+        setimg(JSON.parse(re.data?.data[0]?.image));
+
+        setCrImg(JSON.parse(re.data?.data[0]?.image)[0]);
+      })
       .catch((err) => console.log(err));
   };
+  console.log(crImg);
   useEffect(() => {
     getData();
-  }, []);
+    // setimg(JSON.parse(img));
+
+    console.log(crImg);
+  }, [id]);
   return (
     <div className={styles.single_container}>
-      <div className={styles.single_img}></div>
+      <div className={styles.single_img}>
+        <Image
+          src={crImg}
+          width="90%"
+          margin={"auto"}
+          marginTop="10px"
+          height={"400px"}
+          objectFit="contain"
+        />
+        <Flex gap="4px" marginTop={"10px"}>
+          {imgd?.slice(0, 4).map((el, i) => {
+            return (
+              <Image
+                border={`1px solid ${crImg == el ? "#2874F0" : "#D3D3D3"}`}
+                onMouseOver={() => setCrImg(el)}
+                src={el}
+                key={i}
+                width={"130px"}
+                height={"130px"}
+                objectFit="contain"
+              />
+            );
+          })}
+        </Flex>
+      </div>
       <div className={styles.singlecard_detail}>
         <Text fontSize={"xs"} fontWeight="500" color={"gray.500"}>
           {data[0]?.product_category_tree}
