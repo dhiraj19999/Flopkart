@@ -1,15 +1,5 @@
-<<<<<<< HEAD
+import "./App.css";
 
-import './App.css';
-import Home from './Components/Home/Home';
-
-function App() {
-  return (
-    <div className="App">
-     
-      <Home/>
-    </div>
-=======
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import AllRoutes from "./Pages/AllRoutes";
@@ -21,7 +11,6 @@ function App() {
       <AllRoutes />
       <Footer />
     </>
->>>>>>> main
   );
 }
 
