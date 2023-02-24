@@ -5,7 +5,7 @@ import Checkout from "./Checkout/Checkout";
 import Home from "./Home/Home";
 import Product from "./ProductPage/Product";
 import SingleProduct from "./SingleProduct/SingleProduct";
-
+import AdninProduct from '../Components/Admin/AdminProduct'
 const AllRoutes = () => {
   return (
     <Routes>
@@ -24,6 +24,9 @@ const AllRoutes = () => {
       <Route path="/checkout" element={<Checkout />}>
         Checkout
       </Route>
+      <Route  path="/Adminsingle/:id" element={<AdninProduct/>}/>
+
+
     </Routes>
   );
 };

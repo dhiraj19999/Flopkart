@@ -1,13 +1,16 @@
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import AllRoutes from "./Pages/AllRoutes";
-
+import Allproducts from "../src/Components/Admin/AdminProducts"
+import SidebarWithHeader from '../src/Components/Admin/Admin'
 function App() {
   return (
     <>
-      <Navbar />
+      {/*<Navbar />
       <AllRoutes />
-      <Footer />
+  <Footer />*/}
+
+<SidebarWithHeader/>
     </>
   );
 }
