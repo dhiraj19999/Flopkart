@@ -7,5 +7,5 @@
 }
 .productlist {
   flex: 4;
-  background-color: burlywood;
+  border: 1px solid teal;
 }
