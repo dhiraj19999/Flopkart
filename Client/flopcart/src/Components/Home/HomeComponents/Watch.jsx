@@ -43,13 +43,13 @@ const sliderImageUrl = [
   },
   {id:4,
     image:
-      "http://img6a.flixcart.com/image/watch/a/y/m/r8851116001-maserati-time-original-imae9zxykwzyvb6z.jpeg",
+      "http://img5a.flixcart.com/image/watch/a/y/m/r8851116001-maserati-time-original-imaeafe6hf6zvhmm.jpeg",
       brand:"Vizion",
       retail_price:24400
   },
   {id:5,
     image:
-      "http://img6a.flixcart.com/image/watch/d/3/d/uft-tsw-005-bk-br-t-star-1000x1000-imaecgzggrcdhm5x.jpeg",
+      "http://img5a.flixcart.com/image/watch/d/n/h/apple-shaped-led-rich-club-original-imaeczhwqgtvecwn.jpeg",
       brand:"Aries",
       retail_price:999
   },
@@ -58,6 +58,18 @@ const sliderImageUrl = [
       "http://img5a.flixcart.com/image/watch/e/j/g/wy16b-alfajr-original-imaecgzzfywury4r.jpeg",
       brand:"Alfajr",
       retail_price:5495
+  },
+  {id:7,
+    image:
+      "http://img6a.flixcart.com/image/watch/d/r/c/colat-m08-colat-original-imae2ruyfg9zunzb.jpeg",
+      brand:"Alfajr",
+      retail_price:4999
+  },
+  {id:8,
+    image:
+      "http://img6a.flixcart.com/image/watch/e/k/d/chrono-blue-oxter-original-imaecv84zttgkfm4.jpeg",
+      brand:"Alfajr",
+      retail_price:999
   }
   
 ];
@@ -99,7 +111,7 @@ function Deal() {
                 <div className='slider4'>
               <img src={imageUrl.image} alt="movie"/>
               </div>
-              <div style={{marginTop:"10px"}}>
+              <div style={{margin:"auto",marginTop:"10px",textAlign:"center"}}>
               <p>{imageUrl.brand}</p>
               <p>From  ₹{imageUrl.retail_price}</p>
               </div>
