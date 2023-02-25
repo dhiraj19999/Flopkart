@@ -8,16 +8,15 @@ import {
   Stack,
   useColorModeValue,
   Avatar,
-  AvatarBadge,
-  IconButton,
   Center,
   RadioGroup,
   Radio,
   Text,
 } from "@chakra-ui/react";
-import { SmallCloseIcon } from "@chakra-ui/icons";
-import { useEffect, useState } from "react";
 import { loadData, saveData } from "../../utils/accessLocalstorage";
+import axios from "axios";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const initState = {
   firstName: loadData("firstName") || "NA",
@@ -25,34 +24,58 @@ const initState = {
   email: loadData("email") || "NA",
   gender: loadData("gender") || "NA",
   mobile: loadData("mobile") || "NA",
-  // password: loadData("password") || "aniket",
-  avatar:
-    loadData("avatar") ||
-    "https://avatars.githubusercontent.com/u/107461782?v=4",
+  avatar: loadData("avatar"),
 };
 
 const UserProfileEdit = () => {
-  const [isEditable, setEditable] = useState(true);
+  const { isLoggedIn } = useSelector((store) => store.authReducer);
+  const [isEditable, setEditable] = useState(false);
   const [formData, setFormData] = useState(initState);
-  // const [updated, setUpdated] = useState(false);
-
-  // useEffect(() => {
-  //   console.log("loading page");
-  // }, [updated]);
+  const [imgSelected, setImgSelected] = useState("");
+  const [iconBtnLoading, setIconBtnLoading] = useState(false);
+  const [submitBtnLoading, setSubmitBtnLoading] = useState(false);
 
   const handleEtidalble = () => {
+    if (isLoggedIn === false) {
+      alert("Invalid request");
+      return;
+    }
     setEditable((prev) => !prev);
+  };
+
+  const uploadImage = () => {
+    const formImgData = new FormData();
+    formImgData.append("file", imgSelected);
+    formImgData.append("upload_preset", "ao8hjn9o");
+    setIconBtnLoading(true);
+    axios
+      .post(
+        "https://api.cloudinary.com/v1_1/dgwuo2wpw/image/upload",
+        formImgData
+      )
+      .then((res) => {
+        setIconBtnLoading(false);
+        console.log(res);
+        formData.avatar = res.data.url;
+      })
+      .catch((err) => {
+        setIconBtnLoading(false);
+        console.log(err);
+      });
   };
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, value);
+
     setFormData({ ...formData, [name]: value });
   };
 
   const handleUpdate = async () => {
+    setSubmitBtnLoading(true);
     let ID = loadData("_id");
-
     let payload = {
+      avatar: formData.avatar,
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
@@ -71,15 +94,16 @@ const UserProfileEdit = () => {
     })
       .then((res) => res.json())
       .then((res) => {
+        setSubmitBtnLoading(false);
         getUpdatedUserData(ID);
       })
       .catch((err) => {
+        setSubmitBtnLoading(false);
         console.log(err);
       });
   };
 
   const getUpdatedUserData = async (userID) => {
-    // setUpdated(true);
     fetch("https://drab-pants-bass.cyclic.app/user/all-users/" + userID, {
       method: "GET",
       headers: {
@@ -88,12 +112,13 @@ const UserProfileEdit = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         saveData("firstName", res.data[0].firstName);
         saveData("lastName", res.data[0].lastName);
         saveData("email", res.data[0].email);
         saveData("gender", res.data[0].gender);
         saveData("mobile", res.data[0].mobile);
+        saveData("avatar", res.data[0].avatar);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -131,33 +156,37 @@ const UserProfileEdit = () => {
           <FormLabel>User Icon</FormLabel>
           <Stack direction={["column", "row"]} spacing={6}>
             <Center>
-              <Avatar size="xl" src={formData.avatar}>
-                <AvatarBadge
-                  as={IconButton}
-                  size="sm"
-                  rounded="full"
-                  top="-10px"
-                  colorScheme="red"
-                  aria-label="remove Image"
-                  icon={<SmallCloseIcon />}
-                />
-              </Avatar>
+              <Avatar size="xl" src={formData.avatar} />
             </Center>
             <Center w="full">
-              <Button w="full">Change Icon</Button>
-              {/* <Input
-            placeholder="password"
-            _placeholder={{ color: "gray.500" }}
-            type="password"
-            value={formData.password}
-            onChange={(e) => handleOnChange(e)}
-          /> */}
+              <Flex direction="column" gap="2px">
+                {/* Input is not visible when not editing */}
+                <Input
+                  display={isEditable === true ? "block" : "none"}
+                  p="0"
+                  h="auto"
+                  name="avatar"
+                  placeholder="Choose"
+                  _placeholder={{ color: "gray.500" }}
+                  type="file"
+                  onChange={(e) => setImgSelected(e.target.files[0])}
+                />
+                <Button
+                  isLoading={iconBtnLoading}
+                  isDisabled={isEditable === false}
+                  w="full"
+                  colorScheme="blue"
+                  onClick={uploadImage}
+                >
+                  Change Icon
+                </Button>
+              </Flex>
             </Center>
           </Stack>
         </FormControl>
 
         {/* Details */}
-        <FormControl isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable === false}>
           <FormLabel>First name</FormLabel>
           <Input
             placeholder="first name"
@@ -169,7 +198,7 @@ const UserProfileEdit = () => {
           />
         </FormControl>
 
-        <FormControl isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable === false}>
           <FormLabel>Last name</FormLabel>
           <Input
             placeholder="last name"
@@ -181,7 +210,7 @@ const UserProfileEdit = () => {
           />
         </FormControl>
 
-        <FormControl isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable === false}>
           <FormLabel>Gender</FormLabel>
           <RadioGroup
             name="gender"
@@ -196,7 +225,7 @@ const UserProfileEdit = () => {
           </RadioGroup>
         </FormControl>
 
-        <FormControl isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable === false}>
           <FormLabel>Email address</FormLabel>
           <Input
             name="email"
@@ -208,7 +237,7 @@ const UserProfileEdit = () => {
           />
         </FormControl>
 
-        <FormControl isDisabled={isEditable}>
+        <FormControl isDisabled={isEditable === false}>
           <FormLabel>Mobile</FormLabel>
           <Input
             name="mobile"
@@ -219,19 +248,10 @@ const UserProfileEdit = () => {
             onChange={(e) => handleOnChange(e)}
           />
         </FormControl>
-        {/* <FormControl isDisabled={isEditable}>
-          <FormLabel>Password</FormLabel>
-          <Input
-            placeholder="password"
-            _placeholder={{ color: "gray.500" }}
-            type="password"
-            value={formData.password}
-            onChange={(e) => handleOnChange(e)}
-          />
-        </FormControl> */}
 
         <Stack spacing={6} direction={["column", "row"]}>
           <Button
+            isDisabled={isEditable === false}
             bg={"red.400"}
             color={"white"}
             w="full"
@@ -242,6 +262,8 @@ const UserProfileEdit = () => {
             Cancel
           </Button>
           <Button
+            isLoading={submitBtnLoading}
+            isDisabled={isEditable === false}
             bg={"blue.400"}
             color={"white"}
             w="full"

@@ -10,6 +10,7 @@ import {
   MenuList,
 } from "@chakra-ui/menu";
 import { FiBell, FiChevronDown, FiMenu } from "react-icons/fi";
+import { loadData } from "../../utils/accessLocalstorage";
 
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
@@ -56,19 +57,18 @@ const MobileNav = ({ onOpen, ...rest }) => {
               _focus={{ boxShadow: "none" }}
             >
               <HStack>
-                <Avatar
-                  size={"sm"}
-                  src={"https://avatars.githubusercontent.com/u/107461782?v=4"}
-                />
+                <Avatar size={"sm"} src={loadData("avatar")} />
                 <VStack
                   display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Aniket Pandey</Text>
+                  <Text fontSize="sm">
+                    {loadData("firstName") + loadData("lastName")}
+                  </Text>
                   <Text fontSize="xs" color="gray.600">
-                    Admin
+                    {loadData("user_type" === "admin") ? "Admin" : "User"}
                   </Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>

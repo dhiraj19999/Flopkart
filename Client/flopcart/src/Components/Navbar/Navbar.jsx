@@ -2,7 +2,7 @@ import React from "react";
 
 import logo from "../assets/Flopkart.jpg";
 
-import { Box, Flex, Hide, HStack, Image, Show } from "@chakra-ui/react";
+import { Box, Center, Flex, Hide, HStack, Image, Show } from "@chakra-ui/react";
 
 import Searchbar from "./Searchbar";
 import Menus from "./Menus";
@@ -18,12 +18,12 @@ const Navbar = () => {
       px={nav.px}
       pos="sticky"
       top="0"
-      zIndex="1"
+      zIndex="1000"
     >
       {/* Logo & search */}
       <HStack
         //  border={nav.border}
-        w={{ base: "80%", md: "70%", lg: "45%" }}
+        w={{ base: "75%", md: "65%", lg: "45%" }}
       >
         <Image src={logo} h="60px" />
         <Hide breakpoint="(max-width: 310px)">
@@ -40,9 +40,9 @@ const Navbar = () => {
 
       {/* Hamburger */}
       <Hide breakpoint="(min-width: 990px)">
-        <Box>
+        <Center>
           <Hamburger />
-        </Box>
+        </Center>
       </Hide>
     </Flex>
   );
@@ -55,5 +55,5 @@ const nav = {
   bgColor: "#2874f0",
   justifyContent: "space-around",
   alignItems: "center",
-  px: { base: "0%", sm: "0%", md: "5%", lg: "6%" },
+  px: { base: "2%", sm: "1%", md: "5%", lg: "6%" },
 };
