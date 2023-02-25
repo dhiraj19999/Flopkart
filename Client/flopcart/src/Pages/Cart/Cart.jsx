@@ -108,10 +108,11 @@ if(cartItems.length===0){
 return (
   <Box w="100%" bg="#f1f3f6" minH='100vh' maxH='-webkit-fit-content'  pt="20px">
     <HStack
-      w="90%"
+      w={"90%"}
       bg="f1f3f6"
-      margin="auto"
-      display="flex"
+      
+      marginLeft={{base:"40%",md:"5%",lg:"5%"}}
+      display={{base:"block",md:"flex",lg:"flex"}}
       alignItems="start"
       gap={2}
     >
@@ -194,20 +195,23 @@ return (
               <Box
                 key={data._id}
                 display="flex"
+                flexDirection={{base:"column",md:"row",lg:"row"}}
                 justifyContent="start"
                 w="800px"
                 m=""
                 p="2"
-                borderTop={"1px solid #F0F0F5"}
+                border="wpx solid red"
+                // borderTop={"1px solid #F0F0F5"}
               >
                 <Box display="block"  >
                   <Box w="200px" h="150px" display="flex" alignItems={'center'} justifyContent={"center"}> 
                   <Image src={data.image} mw="120px" maxHeight="110px"  /> </Box>
                <Box textAlign={'center'}> 
                   <ButtonGroup
-                    // display="flex"
-                    // justifyContent="flex-start"
+                    display="flex"
+                    justifyContent="flex-start"
                     // mt="3"
+                    ml="8"
                   >
                     <Button
                       // disabled={data.quantity === 1}
@@ -233,7 +237,7 @@ return (
                     mt="3"
                     variant="list"
                   >
-                    {data.description}
+                    {data.product_name}
                   </Text>
                   <Text
                     fontSize="16px"
@@ -259,7 +263,7 @@ return (
                       src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"
                       ml="4"
                       alt="assured"
-                      w="14"
+                      w="16"
                       h="5"
                     />
                   </Box>
@@ -292,7 +296,7 @@ return (
                       justifyContent="start"
                       ml="2"
                     >
-                      {data.discount}% Off {data.is_FK_Advantage_product} Applied
+                      {data.discount}% Off Best Offer Applied
                     </Text>
                   </Box>
 
@@ -300,11 +304,10 @@ return (
                     display="flex"
                     size="md"
                     mt="4"
-                    colorScheme="blue"
+                    variant="unstyled"
                     bg="none"
                     color
-                    onClick={() => handleRemoveItem(data._id
-                      )}
+                    onClick={onOpen}
                   >
                     REMOVE
                   </Button>
@@ -316,25 +319,26 @@ return (
                   >
                     <AlertDialogOverlay>
                       <AlertDialogContent>
-                        <AlertDialogHeader fontSize="lg" fontWeight="bold">
+                        <AlertDialogHeader fontSize="lg" fontWeight="semibold">
                           Remove Item
                         </AlertDialogHeader>
 
-                        <AlertDialogBody>
+                        <AlertDialogBody color={"gray.500"}>
                           Are you sure you want to remove this item?
                         </AlertDialogBody>
 
                         <AlertDialogFooter>
-                          <Button >
-                            CANCEL
+                          <Button ref={cancelRef} onClick={onClose} >
+                            Cancel
                           </Button>
                           <Button
                             colorScheme="blue"
+                            
                             onClick={() => handleRemoveItem(data._id
                               )}
                             ml={3}
                           >
-                            REMOVE
+                            Remove
                           </Button>
                         </AlertDialogFooter>
                       </AlertDialogContent>
@@ -358,12 +362,12 @@ return (
         >
           <Button  color='white' bg='#fb641b' borderRadius='0' mr='10' pl='10' pr='10' >
             
-            <Link to='/delivery' >PLACE ORDER</Link>
+            <Link to='/checkout' >PLACE ORDER</Link>
           </Button>
         </Box>
       </Box>
 
-      <Box bg="white" position="sticky" top="0" mt='10' shadow="md" h="70vh" w="31%"    >
+      <Box display={{base:"none",md:"block",lg:"block"}} bg="white" position="sticky" top="0" mt='10' shadow="md" h="70vh" w="31%"    >
         
         <Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' w='100%' h='12' >
           <Text ml='5' fontWeight='500' color='grey' >PRICE DETAILS</Text>
@@ -372,12 +376,12 @@ return (
         < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' >
           <Text ml='5' mt='5' fontWeight='400' fontSize='18px' color='black' >Price ({cartItems.length} items) </Text>
           <Spacer/>
-          <Text mr='5' mt='5' fontWeight='400' fontSize='18px' color='black' >₹{" "}</Text>
+          <Text mr='5' mt='5' fontWeight='400' fontSize='18px' color='black' >₹{"actual price"}</Text>
         </Box>
         < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' >
           <Text ml='5' mt='4' fontWeight='400' fontSize='18px' color='black' >Discount </Text>
           <Spacer/>
-          <Text mr='5' mt='4' fontWeight='400' fontSize='18px' color='green' >- ₹{" "}</Text>
+          <Text mr='5' mt='4' fontWeight='400' fontSize='18px' color='green' >- ₹{"discount"}</Text>
         </Box>
         < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' borderBottom='1px dashed grey'  >
           <Text ml='5' mt='4' mb='5' fontWeight='400' fontSize='18px' color='black' >Delivery Charges </Text>
@@ -388,14 +392,14 @@ return (
         < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' borderBottom='1px dashed grey' >
           <Text ml='5' mt='4' mb='5' fontWeight='500' fontSize='19px' color='black' >Total Amount </Text>
           <Spacer/>
-          <Text mr='5' mt='4' mb='5' fontWeight='500' fontSize='19px' color='black' >₹ { " "}</Text>
+          <Text mr='5' mt='4' mb='5' fontWeight='500' fontSize='19px' color='black' >₹ {"total logic"}</Text>
         </Box>
         < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' >
-          <Text ml='5' mt='4' mb='5' fontWeight='500' fontSize='17px' color='green' >You will save ₹{" "} on this order </Text>
+          <Text ml='5' mt='4' mb='3' fontWeight='500' fontSize='17px' color='green' >You will save ₹{"--save logic--"} on this order </Text>
         </Box>
-        <Box mt='5' p='5' display='flex' justifyContent='' alignItems='center' gap={1} >
+        <Box px="5"  py='5' display='flex' justifyContent='' alignItems='center' gap={1} >
           <Img h='31px' w='38px' src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/shield_b33c0c.svg'/>
-          <Text color={'#878787'} w='100%' fontWeight='600' > Safe and Secure Payments.Easy returns.{<br/>}100% Authentic products.</Text>
+          <Text color={'#878787'} w='100%' fontWeight='500' fontSize="sm" > Safe and Secure Payments.Easy returns.{<br/>}100% Authentic products.</Text>
         </Box>
       </Box>
     </HStack>
