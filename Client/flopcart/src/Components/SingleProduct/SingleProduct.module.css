@@ -1,0 +1,43 @@
+.single_container {
+  display: flex;
+  background-color: #f1f3f6;
+  margin: auto;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.single_img {
+  background-color: #fff;
+  flex: 1;
+  padding: 10px;
+}
+.singlecard_detail {
+  background-color: #fff;
+  flex: 2;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.offers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media all and (min-width: 728px) and (max-width: 1250px) {
+  .single_container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .single_img {
+    flex: 2;
+  }
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+  .single_container {
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-direction: column;
+  }
+}
