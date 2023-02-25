@@ -42,6 +42,7 @@ const delDataReq = () => {
 const delDataSuccess = () => {
   return {
     type: types.DEL_CART_SUCCESS,
+    
   };
 };
 const delDataErr = () => {
