@@ -9,6 +9,7 @@ import Deal from "./HomeComponents/Deal"
 import Watch from "./HomeComponents/Watch"
 import Shoes from "./HomeComponents/Shoes"
 import Toy from "./HomeComponents/Toy"
+import Kurta from "./HomeComponents/Kurta"
 
 const Home = () => {
     
@@ -20,6 +21,7 @@ const Home = () => {
            
             <Banner />
             <Electronics/>
+            <Kurta/>
             <Toy/>
             <Deal/>
             <Shoes/>

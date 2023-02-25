@@ -12,8 +12,8 @@ import {
   Box,
   Center,
   Image,
+  Link,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 import { HiUserCircle } from "react-icons/hi";
 import { RiInboxUnarchiveFill, RiCoupon3Fill } from "react-icons/ri";
 import { AiFillHeart } from "react-icons/ai";
@@ -65,7 +65,11 @@ const Hover = () => {
               <Center ml="10px">
                 <HiUserCircle color="#2874f0" size="18px" />
               </Center>{" "}
-              <Center ml="16px">My Profile</Center>
+              <Center ml="16px">
+                <Link href="/myprofile" _hover={{ textDecoration: "none" }}>
+                  My Profile
+                </Link>
+              </Center>
             </Flex>
             <hr />
             <Flex cursor={"pointer"} className="pop1" h="49px" fontSize="14px">

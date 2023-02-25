@@ -2,7 +2,7 @@ import React from 'react';
 import { Box,Button, Img, Text, WrapItem} from '@chakra-ui/react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./fashion.css";
+import "./Kids.css";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -24,58 +24,47 @@ const sliderImageUrl = [
   //First image url
   {id:1,
     image:
-      "http://img5a.flixcart.com/image/usb-gadget/b/x/b/portable-1024-jrb-original-imaejgwyededybzp.jpeg",
-      brand:"JRB",
-      retail_price:499
+      "http://img6a.flixcart.com/image/sweater/c/h/5/4001-grey-superkids-26-original-imaeap84grujmwzz.jpeg",
+      brand:"Super Kids",
+      retail_price:825
   },
+  
+  //Second image url
   {id:2,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/k/8/m/shortkut-enterprises-model-no-493-original-imae6hpde2qezbxf.jpeg",
-      brand:"Shortkut enterprises",
-      retail_price:1200
+      "http://img6a.flixcart.com/image/backpack/p/n/3/twity-face-bag-multicolor-pandora-backpack-kids-school-bag-twity-1000x1000-imaehc4xn9qxffhw.jpeg",
+      brand:"Pandora",
+      retail_price:799
   },
   {id:3,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/j/e/v/shortkut-enterprises-model-no-498-original-imaeggfqkhmyys9y.jpeg",
-      brand:"Shortkut enterprises",
-      retail_price:1200
+      "http://img6a.flixcart.com/image/mosquito-net/b/z/k/cvpc021-chinmay-kids-printed-cotton-padded-1100x1100-imaee82ggwrudusk.jpeg",
+      brand:"CHINMAY KIDS",
+      retail_price:1490
   },
-  //Second image url
   {id:4,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/m/d/x/shortkut-enterprises-model-no-485-1100x1100-imaed2xjdgkfy5sh.jpeg",
-      brand:"Shortkut enterprises",
-      retail_price:1200
+      "http://img5a.flixcart.com/image/backpack/p/n/3/twity-face-bag-multicolor-pandora-backpack-kids-school-bag-twity-original-imaehc5yhttfjak8.jpeg",
+      brand:"Pandora",
+      retail_price:799
   },
   {id:5,
     image:
-      "http://img5a.flixcart.com/image/usb-gadget/b/x/b/portable-1024-jrb-original-imaejgwyededybzp.jpeg",
-      brand:"JRB",
-      retail_price:499
-  },
-  {id:6,
-    image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/m/d/x/shortkut-enterprises-model-no-485-1100x1100-imaed2xjdgkfy5sh.jpeg",
-      brand:"Shortkut enterprises",
-      retail_price:1200
-  },
-  {id:7,
-    image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/t/d/v/shortkut-enterprises-model-no-467-1100x1100-imaeggahdjzcbmj4.jpeg",
-      brand:"Shortkut enterprises",
-      retail_price:1200
+      "http://img5a.flixcart.com/image/lunch-box/n/s/m/gayatri-creations-orange-kids-set-original-imaehh3e5v69z5cg.jpeg",
+      brand:"GAYATRI CREATIONS",
+      retail_price:695
   }
   
 ];
 
-function Electronics() {
+function Kids() {
 
     return (
         <div> 
-        <Box display={"flex"} mt="20px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p='1' bg='white' >
+        <Box display={"flex"} mt="30px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p='1' bg='white' >
 
             <Box width="25%" h="300px" m="auto" textAlign={"center"} className="dealsBox" border={"1px solid black"}>
-                <Text paddingTop={{base:"120px", md:"120px", lg:"40px"}}  fontSize={{ base: '10px', md: '20px', lg: '30px' }}> Best Of Electronics</Text>
+                <Text paddingTop={{base:"120px", md:"120px", lg:"40px"}}  fontSize={{ base: '10px', md: '20px', lg: '30px' }}>Fashion Top Deals</Text>
 
                 <WrapItem pt="30px">
                     <Button  fontSize={{ base: '6px', md: '9px', lg: '12px' }} m={"auto"} colorScheme='messenger'>
@@ -84,7 +73,7 @@ function Electronics() {
                 
                         </Button>
                 </WrapItem>
-                <Img   src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/7593e7b6640822c1.jpg?q=90" alt="fg" width={"100%"}/>
+                <Img   src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/31d46a8fd93eeedd.jpg?q=90" alt="fg" width={"100%"}/>
 
             </Box>
             <Box w={{ base: '80%', md: '75%', lg: '84%' }} m="auto" className="OffSlider" border={"1px solid black"} h="300px">
@@ -102,7 +91,7 @@ function Electronics() {
         {sliderImageUrl.map((imageUrl, index) => {
           return (
             <div className="slider" key={index}>
-                <div className='slider1'>
+                <div className='slider7'>
               <img src={imageUrl.image} alt="movie"/>
               </div>
               <div style={{margin:"auto",marginTop:"10px",textAlign:"center"}}>
@@ -114,7 +103,6 @@ function Electronics() {
         })}
       </Carousel>
     </div>
-               
             </Box>
         </Box>
         
@@ -122,4 +110,4 @@ function Electronics() {
     );
 }
 
-export default Electronics;
+export default Kids;

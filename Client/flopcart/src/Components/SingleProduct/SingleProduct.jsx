@@ -5,6 +5,7 @@ import {
   Image,
   Stack,
   Text,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import { FaShoppingCart } from "react-icons/fa";
@@ -15,13 +16,19 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./SingleProduct.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { loadData } from "../../utils/accessLocalstorage";
+import { addData, cartLength } from "../../redux/cartReducer/action";
 export const SingleProduc = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
   const [view, setView] = useState("noview");
   const [imgd, setimg] = useState([]);
   const [crImg, setCrImg] = useState("");
-
+  const toast = useToast();
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((store) => store.authReducer);
+  const { carts } = useSelector((store) => store.cartReducer);
   const getData = () => {
     return axios
       .get(`https://drab-pants-bass.cyclic.app/products/${id}`)
@@ -33,16 +40,35 @@ export const SingleProduc = () => {
       })
       .catch((err) => console.log(err));
   };
-  console.log(crImg);
+
+  const handleCart = () => {
+    if (!isLoggedIn) {
+      return toast({
+        title: `Please login First`,
+        position: "bottom-left",
+        status: "error",
+        isClosable: true,
+        duration: 2000,
+      });
+    }
+    dispatch(addData(data[0]))
+      .then((re) =>
+        toast({
+          title: `Added to cart Successfully`,
+          position: "bottom",
+          status: "success",
+          isClosable: true,
+          duration: 2000,
+        })
+      )
+      .then(() => dispatch(cartLength()))
+      .catch((err) => console.log(err.response.data.message));
+    console.log(carts);
+  };
   useEffect(() => {
     getData();
-    // setimg(JSON.parse(img));
-
-    console.log(crImg);
   }, [id]);
-  const addToCart = () => {
-    console.log("added to cart");
-  };
+
   return (
     <div className={styles.single_container}>
       <div className={styles.single_img}>
@@ -76,7 +102,7 @@ export const SingleProduc = () => {
             background={"#ff9f00"}
             colorScheme="yellow"
             color={"#fff"}
-            onClick={addToCart}
+            onClick={handleCart}
           >
             <FaShoppingCart />
             {"  "}Add to Cart

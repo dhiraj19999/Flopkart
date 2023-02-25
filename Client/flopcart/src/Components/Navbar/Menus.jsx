@@ -9,24 +9,24 @@ import {
   BsQuestionCircle,
   BsDownload,
 } from "react-icons/bs";
-// import { FaRegUserCircle } from "react-icons/fa";
-// import { RiCoupon3Line } from "react-icons/ri";
 import { HiOutlineTrendingUp } from "react-icons/hi";
 
-import { Flex, HStack, Spacer, Tag, Text } from "@chakra-ui/react";
+import { Flex, HStack, Link, Spacer, Tag, Text } from "@chakra-ui/react";
 
 import DropDownMenu from "./DropDown";
-// import UserAvatar from "./UserAvatar";
 import Hover from "../signup/Hover";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { cartLength } from "../../redux/cartReducer/action";
 
 const Menus = () => {
+  const dispatch = useDispatch();
+  const { carts } = useSelector((store) => store.cartReducer);
+  useEffect(() => {
+    dispatch(cartLength());
+  }, [dispatch]);
   return (
     <Flex color="#f0f0f0" alignItems="center">
-      {/* Username */}
-      {/* <UserAvatar img={"https://bit.ly/ryan-florence"} name="Ryan Florence" /> */}
-      {/* <Spacer /> */}
-      {/* <DropDownMenu menuList={menuListUser} menuName="Ryan" /> */}
-
       <Hover />
 
       <Spacer />
@@ -53,10 +53,14 @@ const Menus = () => {
           color="white"
           size="sm"
         >
-          2
+          {carts.length || 0}
         </Tag>
         <BsMinecart size="20" />
-        <Text fontWeight="bold">Cart</Text>
+        <Text fontWeight="bold">
+          <Link href="/cart" _hover={{ textDecoration: "none" }}>
+            Cart
+          </Link>
+        </Text>
       </HStack>
     </Flex>
   );
@@ -73,7 +77,6 @@ export default Menus;
 //   { icon: BsSuitHeart, text: "Wishlist" },
 //   { icon: RiCoupon3Line, text: "Coupons" },
 // ];
-
 
 // Dropdown option under More menu
 const menuListMore = [
