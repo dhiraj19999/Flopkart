@@ -93,7 +93,7 @@ function Toy() {
                 <div className='slider5'>
               <img src={imageUrl.image} alt="movie"/>
               </div>
-              <div style={{marginTop:"10px"}}>
+              <div style={{margin:"auto",marginTop:"10px",textAlign:"center"}}>
               <p>{imageUrl.brand}</p>
               <p>From  ₹{imageUrl.retail_price}</p>
               </div>
