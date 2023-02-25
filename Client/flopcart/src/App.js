@@ -7,9 +7,11 @@ import AllRoutes from "./Pages/AllRoutes";
 function App() {
   return (
     <>
+
       <Navbar />
       <AllRoutes />
       <Footer />
+
     </>
   );
 }
