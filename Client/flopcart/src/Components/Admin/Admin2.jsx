@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
-import Product from './AdminProduct';
-import Allproducts from './AdminProducts';
-import { useNavigate } from "react-router-dom"
 
+import { useNavigate } from 'react-router-dom';
+import  AdninProduct from "./AdminProduct";
 import {
   IconButton,
   Avatar,
@@ -50,17 +49,21 @@ const LinkItems= [
 ];
 
 
-export default function SidebarWithHeade({
+
+
+
+export default function SidebarWithHeader({
   children,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  
 
   return (
     <Box h="5100px" bg={useColorModeValue('gray.100', 'gray.900')}>
       <SidebarContent
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
+        
       />
       <Drawer
         autoFocus={false}
@@ -84,8 +87,8 @@ export default function SidebarWithHeade({
 
 
 
-<Allproducts/>
-    
+
+    <AdninProduct/>
 
 
 
@@ -117,15 +120,15 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-      <Link onClick={()=>{
+     {LinkItems.map((link) => (
+       <Link onClick={()=>{
         if(link.name=="Products"){
             console.log(link)
             navigate("/AdminProducts")
         }
-      }}>  <NavItem key={link.name} icon={link.icon} >
+      }}>  <NavItem key={link.name} icon={link.icon}>
           {link.name}
-        </NavItem></Link>
+        </NavItem> </Link>
       ))}
     </Box>
   );
