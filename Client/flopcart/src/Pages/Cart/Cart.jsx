@@ -106,17 +106,16 @@ if(cartItems.length===0){
 
  
 return (
-  <Box w="100%" bg="#f1f3f6" minH='100vh' maxH='-webkit-fit-content'  pt="20px">
-    <HStack
-      w={"90%"}
+  <Box w={"100%"} bg="#f1f3f6" minH='100vh' maxH='-webkit-fit-content'  pt="20px" >
+    <HStack 
+      w={'90%'}
       bg="f1f3f6"
-      
-      marginLeft={{base:"40%",md:"5%",lg:"5%"}}
-      display={{base:"block",md:"flex",lg:"flex"}}
+      margin="auto"
+      display={{base:"column",md:"flex",lg:"flex"}}
       alignItems="start"
       gap={2}
     >
-      <Box shadow="md" bg="f1f3f6" w="69%" position='relative' top='0'   >
+      <Box  shadow="md" bg="f1f3f6" w="69%" position='relative' top='0'   >
         <Box
           w="100%"
           bg="white"
@@ -156,9 +155,7 @@ return (
               <PopoverArrow />
               <PopoverCloseButton />
               <PopoverBody color="black">
-
                 <Text display={ address.Name !== undefined? 'none' : 'flex'  } justifyContent='center' >OOPS!! <br /> You Don't Have Any Saved Adress </Text>
-
                 <Text display={ address.Name === undefined? 'none' : 'grid' } justifyContent='start'  >
                   <Box  textAlign='left' bg='white' >
                    {address.Name} <br />      */}
@@ -210,7 +207,7 @@ return (
                   <ButtonGroup
                     display="flex"
                     justifyContent="flex-start"
-                    // mt="3"
+                    // // mt="3"
                     ml="8"
                   >
                     <Button
@@ -395,11 +392,11 @@ return (
           <Text mr='5' mt='4' mb='5' fontWeight='500' fontSize='19px' color='black' >₹ {"total logic"}</Text>
         </Box>
         < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' >
-          <Text ml='5' mt='4' mb='3' fontWeight='500' fontSize='17px' color='green' >You will save ₹{"--save logic--"} on this order </Text>
+          <Text ml='5' mt='2' fontWeight='500' fontSize='16px' color='green' >You will save ₹{"{ }"} on this order  </Text>
         </Box>
-        <Box px="5"  py='5' display='flex' justifyContent='' alignItems='center' gap={1} >
+        <Box px="5"  py='3' display='flex' justifyContent='' alignItems='center' gap={1} >
           <Img h='31px' w='38px' src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/shield_b33c0c.svg'/>
-          <Text color={'#878787'} w='100%' fontWeight='500' fontSize="sm" > Safe and Secure Payments.Easy returns.{<br/>}100% Authentic products.</Text>
+          <Text color={'#878787'} w='100%' fontWeight='500' fontSize="xs" > Safe and Secure Payments.Easy returns.{<br/>}100% Authentic products.</Text>
         </Box>
       </Box>
     </HStack>

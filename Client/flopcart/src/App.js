@@ -7,10 +7,10 @@ import Cart from "./Pages/Cart/Cart";
 function App() {
   return (
     <>
-      {/* <Navbar />
+       <Navbar />
       <AllRoutes />
-      <Footer /> */}
-      <Cart/>
+       <Footer />
+     
     </>
   );
 }
