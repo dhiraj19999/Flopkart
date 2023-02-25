@@ -9,7 +9,8 @@ const userSchema = mongoose.Schema({
   email: reqString,
   gender: reqString,
   mobile: reqNumber,
-  password: reqString
+  password: reqString,
+  avatar: { type: String, default: "" },
 });
 
 const UserModel = mongoose.model("user", userSchema);
