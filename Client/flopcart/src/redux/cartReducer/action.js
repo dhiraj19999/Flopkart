@@ -1,60 +1,87 @@
 import { loadData } from "../../utils/accessLocalstorage";
-import {
-    ADD_TO_CART_REQUEST,
-    ADD_TO_CART_SUCCESS,
-    ADD_TO_CART_FAILURE,
-    REMOVE_FROM_CART_REQUEST,
-    REMOVE_FROM_CART_SUCCESS,
-    REMOVE_FROM_CART_FAILURE,
-  } from "./actionTypes";
+import * as types from "./actionTypes";
+import axios from "axios";
 
-import axios from "axios"
-
-  export const getData =async()=>{
-    try {
-     const res = await fetch(`https://drab-pants-bass.cyclic.app/cart`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': loadData("token")
-      },}
-      
-      
-      )
-     const data = await res.json()
-     console.log(data.data);
-     return data.data
-
-    } catch (error) {
-      console.log("error");
-    }
-  }
-
-  //delete request 
-
-  export const removeItemFromCart = (itemId )=> async dispatch => {
-    try {
-      await axios.delete(`https://drab-pants-bass.cyclic.app/cart/delete/${itemId}`, {
-        headers: {
-          "Authorization": loadData("token")
-        }
-      });
-  
-      dispatch({
-        type: REMOVE_FROM_CART_SUCCESS,
-        payload: itemId
-      });
-    } catch (error) {
-      dispatch({
-        type: REMOVE_FROM_CART_FAILURE,
-        payload: error.message
-        
-      });
-    }
+const getDataReq = () => {
+  return {
+    type: types.GET_CART_REQ,
   };
-  
-  
-  
-  
- 
+};
+
+const getDataSuccess = (pa) => {
+  return {
+    type: types.GET_CART_SUCCESS,
+    payload: pa,
+  };
+};
+const getDataError = () => {
+  return {
+    type: types.GET_CART_ERROR,
+  };
+};
+const addDataReq = () => {
+  return {
+    type: types.ADD_TO_CART_REQUEST,
+  };
+};
+const addDataSuccess = () => {
+  return {
+    type: types.ADD_TO_CART_SUCCESS,
+  };
+};
+const addDataErr = () => {
+  return {
+    type: types.ADD_TO_CART_FAILURE,
+  };
+};
+const delDataReq = () => {
+  return {
+    type: types.DEL_CART_REQ,
+  };
+};
+const delDataSuccess = () => {
+  return {
+    type: types.DEL_CART_SUCCESS,
+    
+  };
+};
+const delDataErr = () => {
+  return {
+    type: types.DEL_CART_ERROR,
+  };
+};
+const cartLength = () => (dispatch) => {
+  dispatch(getDataReq());
+  return axios
+    .get(`https://drab-pants-bass.cyclic.app/cart`, {
+      headers: {
+        Authorization: loadData("token"),
+      },
+    })
+    .then((re) => {
+      return dispatch(getDataSuccess(re.data.data));
+    })
+    .catch((err) => dispatch(getDataError()));
+};
+const addData = (p) => (dispatch) => {
+  dispatch(addDataReq);
+  return axios
+    .post(`https://drab-pants-bass.cyclic.app/cart/add`, p, {
+      headers: {
+        Authorization: loadData("token"),
+      },
+    })
+    .then((re) => dispatch(addDataSuccess()))
+    .catch((er) => dispatch(addDataErr()));
+};
+export {
+  getDataError,
+  getDataReq,
+  getDataSuccess,
+  cartLength,
+  delDataErr,
+  addData,
+  delDataReq,
+  delDataSuccess,
+};
 
