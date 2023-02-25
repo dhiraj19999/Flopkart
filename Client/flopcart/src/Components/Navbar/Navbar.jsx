@@ -7,6 +7,7 @@ import { Box, Center, Flex, Hide, HStack, Image, Show } from "@chakra-ui/react";
 import Searchbar from "./Searchbar";
 import Menus from "./Menus";
 import Hamburger from "./Hamburger";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -25,7 +26,9 @@ const Navbar = () => {
         //  border={nav.border}
         w={{ base: "75%", md: "65%", lg: "45%" }}
       >
-        <Image src={logo} h="60px" />
+        <Link to="/">
+          <Image src={logo} h="60px" cursor={"pointer"} />
+        </Link>
         <Hide breakpoint="(max-width: 310px)">
           <Searchbar />
         </Hide>
