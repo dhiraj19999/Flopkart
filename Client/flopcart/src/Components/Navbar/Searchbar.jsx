@@ -13,7 +13,7 @@ const Searchbar = () => {
   };
 
   const handleSubmit = async () => {
-    return navigate("/" + searchVal);
+    return navigate("/products/" + searchVal);
   };
 
   return (
