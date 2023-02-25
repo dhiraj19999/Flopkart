@@ -48,6 +48,7 @@ import axios from "axios"
       dispatch({
         type: REMOVE_FROM_CART_FAILURE,
         payload: error.message
+        
       });
     }
   };
