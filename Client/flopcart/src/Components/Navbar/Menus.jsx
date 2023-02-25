@@ -15,8 +15,16 @@ import { Flex, HStack, Link, Spacer, Tag, Text } from "@chakra-ui/react";
 
 import DropDownMenu from "./DropDown";
 import Hover from "../signup/Hover";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { cartLength } from "../../redux/cartReducer/action";
 
 const Menus = () => {
+  const dispatch = useDispatch();
+  const { carts } = useSelector((store) => store.cartReducer);
+  useEffect(() => {
+    dispatch(cartLength());
+  }, [dispatch]);
   return (
     <Flex color="#f0f0f0" alignItems="center">
       <Hover />
@@ -45,7 +53,7 @@ const Menus = () => {
           color="white"
           size="sm"
         >
-          2
+          {carts.length || 0}
         </Tag>
         <BsMinecart size="20" />
         <Text fontWeight="bold">

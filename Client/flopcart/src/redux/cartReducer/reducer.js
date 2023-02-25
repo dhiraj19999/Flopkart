@@ -7,6 +7,7 @@ const intialData = {
 };
 
 export const cartReducer = (state = intialData, { type, payload }) => {
+  console.log(type, payload);
   switch (type) {
     case types.GET_CART_REQ:
       return {
