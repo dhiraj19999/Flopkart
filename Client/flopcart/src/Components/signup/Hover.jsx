@@ -67,7 +67,7 @@ const Hover = () => {
                 <HiUserCircle color="#2874f0" size="18px" />
               </Center>{" "}
               <Center ml="16px">
-                {loadData("email") !== "aniket@flopkart.com" ? (
+                {loadData("email") === "admin@flopkart.com" ? (
                   <Link href="/admin" _hover={{ textDecoration: "none" }}>
                     My Profile
                   </Link>
