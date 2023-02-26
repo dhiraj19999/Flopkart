@@ -102,14 +102,34 @@ function Deal() {
     );
   };
 
-  const CustomRightArrow = ({ onClick }) => {
+  const CustomRightArrow = ({ className, onClick }) => {
     return (
-      <Box onClick={() => onClick()}>
+      <Box onClick={() => onClick()} className={className}>
         <h1 style={{ fontWeight: "bolder", fontSize: "45px" }}>
           {" "}
           <GrFormNext />{" "}
         </h1>
       </Box>
+    );
+  };
+  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const {
+      carouselState: { currentSlide },
+    } = rest;
+    return (
+      <div className="carousel-button-group">
+        {" "}
+        // remember to give it position:absolute
+        <Button
+          className={currentSlide === 0 ? "disable" : ""}
+          onClick={() => previous()}
+        />
+        <Button onClick={() => next()} />
+        <Button onClick={() => goToSlide(currentSlide + 1)}>
+          {" "}
+          Go to any slide{" "}
+        </Button>
+      </div>
     );
   };
 
@@ -165,7 +185,10 @@ function Deal() {
               showDots={false}
               infinite={true}
               partialVisible={false}
+              //customLeftArrow={<CustomRightArrow />}
               dotListClass="custom-dot-list-style"
+              //arrows={false}
+              //customButtonGroup={<ButtonGroup />}
             >
               {sliderImageUrl.map((imageUrl, index) => {
                 return (
