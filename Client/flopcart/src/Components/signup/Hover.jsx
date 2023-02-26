@@ -22,6 +22,7 @@ import { FiPower } from "react-icons/fi";
 import Signup from "./Signup";
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../redux/authReducer/action";
+import { loadData } from "../../utils/accessLocalstorage";
 
 const Hover = () => {
   const { isLoggedIn } = useSelector((store) => store.authReducer);
@@ -66,9 +67,15 @@ const Hover = () => {
                 <HiUserCircle color="#2874f0" size="18px" />
               </Center>{" "}
               <Center ml="16px">
-                <Link href="/myprofile" _hover={{ textDecoration: "none" }}>
-                  My Profile
-                </Link>
+                {loadData("email") !== "aniket@flopkart.com" ? (
+                  <Link href="/admin" _hover={{ textDecoration: "none" }}>
+                    My Profile
+                  </Link>
+                ) : (
+                  <Link href="/myprofile" _hover={{ textDecoration: "none" }}>
+                    My Profile
+                  </Link>
+                )}
               </Center>
             </Flex>
             <hr />
