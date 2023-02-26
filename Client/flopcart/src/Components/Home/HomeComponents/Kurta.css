@@ -9,14 +9,12 @@
   width: 50%;
   margin: auto;
   cursor: pointer;
-  border: 1px solid red;
 }
 
 .slider6 img {
   width: 45%;
   margin: auto;
   cursor: pointer;
-  border: 1px solid yellow;
 }
 
 .react-multi-carousel-list {

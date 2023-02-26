@@ -142,8 +142,8 @@ function Kids() {
                         textAlign: "center",
                       }}
                     >
-                      <p>{imageUrl.brand}</p>
-                      <p>From ₹{imageUrl.retail_price}</p>
+                      <Text color={"#388e3c"}>{imageUrl.brand}</Text>
+                      <Text color="#A9A9A9">From ₹{imageUrl.retail_price}</Text>
                     </div>
                   </div>
                 );
