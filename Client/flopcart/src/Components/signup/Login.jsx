@@ -20,7 +20,11 @@ import { Link } from "react-router-dom";
 import Signup from "./Signup";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/authReducer/action";
+import {
+  login,
+  loginError,
+  loginSuccess,
+} from "../../redux/authReducer/action";
 
 import { useSelector } from "react-redux";
 import { loadData } from "../../utils/accessLocalstorage";
@@ -29,36 +33,35 @@ const Login = () => {
   const { isLoggedIn } = useSelector((store) => store.authReducer);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-
   const toast = useToast();
   // const { loading, error } = userLogin;
   const submitHandler = (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     console.log(email, password);
-    if (email!=="" && password !=="") {
+    if (email !== "" && password !== "") {
       dispatch(login(email, password)).then(() => {
         toast({
           title: "Account created.",
           description: "We've logged in your account for you.",
           status: "success",
-          duration: 9000,
+          duration: 4000,
           isClosable: true,
         });
-        setLoading(false)
+        setLoading(false);
       });
     } else {
       toast({
         title: "Oops! Looks like something is missing.",
         description: "Please enter your crendentials.",
         status: "error",
-        duration: 9000,
+        duration: 2000,
         isClosable: true,
       });
+      setLoading(false);
     }
-   
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -160,8 +163,7 @@ const Login = () => {
                   </Text>
 
                   <Button
-                   isLoading = {loading?true:false}
-                  
+                    isLoading={loading ? true : false}
                     onClick={submitHandler}
                     borderRadius="0.5"
                     marginTop="4"

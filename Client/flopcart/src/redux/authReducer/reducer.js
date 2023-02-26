@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
       saveData("gender", action.payload.data.gender);
       saveData("mobile", action.payload.data.mobile);
       saveData("token", action.payload.token);
-      console.log(action.payload.data);
+     // console.log(action.payload.data);
       return {
         ...state,
         loading: false,
