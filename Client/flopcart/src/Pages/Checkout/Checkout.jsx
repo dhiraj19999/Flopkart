@@ -15,6 +15,7 @@ import { CheckIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import { useToast } from "@chakra-ui/react";
 import { MdSecurity } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
+import vid from "../../Components/assets/vid.gif"
 
 import {
   Modal,
@@ -28,7 +29,8 @@ import {
 } from '@chakra-ui/react'
 const Checkout = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const cartItems = useSelector((state) => state.cartReducer.cartItems);
+  const cartItems = useSelector((state) => state.cartReducer.carts);
+  const dispatch = useDispatch();
 
   const toast = useToast();
  const [confirm, setConfirm] = useState(false)
@@ -100,6 +102,15 @@ const Checkout = () => {
       ;
     }
   };
+
+  const total = cartItems?.reduce((ac, el) => {
+    return ac + parseInt(el.retail_price);
+  }, 0);
+  const discount = cartItems?.reduce((ac, el) => {
+    return ac + parseInt(el.discounted_price);
+  }, 0);
+
+ 
 
   return (
     
@@ -207,7 +218,7 @@ const Checkout = () => {
         <ModalContent>
           <ModalCloseButton />
           <ModalBody>
-          <Image src="http://www.shikharclasses.in/wp-content/uploads/2020/04/PAYMENT-SUCCESS.png" /> <br />
+          <Image src={vid} /> <br />
           <Image m="auto" mt="-6" w="250px" src="http://www.dealnloot.com/wp-content/uploads/2017/11/Flipkart.png" />
           </ModalBody>
 
@@ -277,7 +288,7 @@ const Checkout = () => {
                 type="text"
                 name="Address"
                 placeholder="Address"
-                w="100%"
+                w={{base:"100%",md:"93%"}}
                 border="2px solid "
                 bg="white"
                 pl="6"
@@ -363,7 +374,7 @@ const Checkout = () => {
             </Text>
             <Spacer />
             <Text mr="5" mt="5" fontWeight="400" fontSize="18px" color="black">
-              ₹"actual price"
+              ₹{total}
             </Text>
           </Box>
           {/* < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' >
@@ -427,7 +438,7 @@ const Checkout = () => {
               fontSize="19px"
               color="black"
             >
-              ₹ total logic
+              ₹{discount}
             </Text>
           </Box>
           <Box
@@ -445,7 +456,7 @@ const Checkout = () => {
               color="green"
             >
               
-              Your Total Savings on this order ₹{"{ }"}
+              Your Total Savings on this order ₹{total-discount}
             </Text>
           </Box>
           <Box

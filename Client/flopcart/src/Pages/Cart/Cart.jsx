@@ -556,7 +556,7 @@ const Cart = () => {
               fontSize="19px"
               color="black"
             >
-              Total Amount{" "}
+              Total Amount
             </Text>
             <Spacer />
             <Text
@@ -584,7 +584,7 @@ const Cart = () => {
               fontSize="17px"
               color="green"
             >
-              You will save ₹{"--save logic--"} on this order{" "}
+              You will save ₹{total - discount} on this order{" "}
             </Text>
           </Box>
           <Box

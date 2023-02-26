@@ -2,6 +2,7 @@ import React from "react";
 
 import logo from "../assets/Flopkart.jpg";
 
+
 import { Box, Center, Flex, Hide, HStack, Image, Show } from "@chakra-ui/react";
 
 import Searchbar from "./Searchbar";

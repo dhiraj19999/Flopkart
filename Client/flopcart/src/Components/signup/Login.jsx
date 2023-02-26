@@ -29,22 +29,36 @@ const Login = () => {
   const { isLoggedIn } = useSelector((store) => store.authReducer);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false)
   const dispatch = useDispatch();
 
   const toast = useToast();
   // const { loading, error } = userLogin;
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoading(true)
     console.log(email, password);
-    dispatch(login(email, password)).then(() => {
+    if (email!=="" && password !=="") {
+      dispatch(login(email, password)).then(() => {
+        toast({
+          title: "Account created.",
+          description: "We've logged in your account for you.",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        setLoading(false)
+      });
+    } else {
       toast({
-        title: "Account created.",
-        description: "We've logged in your account for you.",
-        status: "success",
+        title: "Oops! Looks like something is missing.",
+        description: "Please enter your crendentials.",
+        status: "error",
         duration: 9000,
         isClosable: true,
       });
-    });
+    }
+   
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -102,7 +116,7 @@ const Login = () => {
                 />
               </Box>
               <Box height="32rem" padding="35" width="24rem" color="#878787">
-                <FormControl>
+                <FormControl isRequired>
                   <>
                     <FormLabel>Email address</FormLabel>
                     <Input
@@ -146,6 +160,8 @@ const Login = () => {
                   </Text>
 
                   <Button
+                   isLoading = {loading?true:false}
+                  
                     onClick={submitHandler}
                     borderRadius="0.5"
                     marginTop="4"

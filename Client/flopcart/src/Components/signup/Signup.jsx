@@ -25,6 +25,7 @@ import {
 import Login from "./Login";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -48,16 +49,32 @@ const Signup = () => {
     // }
 
     // Dispatch register action
+    setLoading(true)
     console.log(formData);
-    dispatch(register(formData)).then(() => {
+     
+    if ( formData.firstName !==""&& formData.lastName!==""&& formData.email!==""&& formData.gender!==""&& formData.mobile!==""&& formData.password!=="" ) {
+      dispatch(register(formData)).then(() => {
+        setLoading(false)
+        toast({
+          title: "Account created.",
+          description: "We've created your account for you.",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        
+      });
+    } else {
       toast({
-        title: "Account created.",
-        description: "We've created your account for you.",
-        status: "success",
+        title: "Oops! Looks like something is missing.",
+        description: "Please enter your details.",
+        status: "error",
         duration: 9000,
         isClosable: true,
       });
-    });
+    }
+
+    
   };
 
   const handleInputChange = (e) => {
@@ -66,6 +83,7 @@ const Signup = () => {
       ...prevState,
       [name]: value,
     }));
+    
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -255,6 +273,8 @@ const Signup = () => {
                   </Text>
 
                   <Button
+                   isLoading ={loading?true:false}
+                   loadingText='Registering'
                     onClick={handleSubmit}
                     borderRadius="0.5"
                     marginTop="4"
