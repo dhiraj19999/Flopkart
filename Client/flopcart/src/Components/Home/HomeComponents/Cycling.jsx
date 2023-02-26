@@ -96,7 +96,7 @@ function Cycling() {
             paddingTop={{ base: "120px", md: "120px", lg: "40px" }}
             fontSize={{ base: "10px", md: "20px", lg: "30px" }}
           >
-            Fashion Top Deals
+            Top Deals on Sports wears
           </Text>
 
           <WrapItem pt="30px">

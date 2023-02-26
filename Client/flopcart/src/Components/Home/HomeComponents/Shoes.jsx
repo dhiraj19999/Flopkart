@@ -95,7 +95,7 @@ function Shoes() {
             paddingTop={{ base: "120px", md: "120px", lg: "40px" }}
             fontSize={{ base: "10px", md: "20px", lg: "30px" }}
           >
-            Shop for a cool summer
+            Top deals for footwears
           </Text>
 
           <WrapItem pt="30px">

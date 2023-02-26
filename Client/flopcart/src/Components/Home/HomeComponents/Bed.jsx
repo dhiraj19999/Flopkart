@@ -103,7 +103,7 @@ function Bed() {
             paddingTop={{ base: "120px", md: "120px", lg: "40px" }}
             fontSize={{ base: "10px", md: "20px", lg: "30px" }}
           >
-            Fashion Top Deals
+            Top Deals on Home Decors
           </Text>
 
           <WrapItem pt="30px">
