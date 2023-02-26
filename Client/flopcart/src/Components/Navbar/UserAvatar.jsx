@@ -1,7 +1,7 @@
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import React from "react";
 
-const UserAvatar = ({ name, img }) => {
+const UserAvatar = ({ name, img, status }) => {
   return (
     <Avatar
       size="sm"

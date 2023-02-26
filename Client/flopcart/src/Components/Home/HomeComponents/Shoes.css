@@ -1,60 +1,57 @@
 .slider {
-    margin-left: 20px;
-    margin-bottom: -10px;
-    overflow:"hidden";
-    height: 100%;
-    cursor: pointer;
-    /* border: 1px solid blue; */
-  }
-  
-  .slider2 img{
-    width: 80%;
-    margin: auto;
-    cursor: pointer;
-    /* border: 1px solid red; */
-  }
-  
-  .react-multi-carousel-list {
+  margin-left: 20px;
+  margin-bottom: -10px;
+  overflow: "hidden";
+  height: 100%;
+  cursor: pointer;
+  /* border: 1px solid blue; */
+}
+
+.slider2 img {
+  width: 80%;
+  margin: auto;
+  cursor: pointer;
+  /* border: 1px solid red; */
+}
+
+.react-multi-carousel-list {
   padding: 0rem 0 2rem 0;
-  }
-  
-  .custom-dot-list-style button{
+}
+
+.custom-dot-list-style button {
   border: none;
   background: rgb(255, 68, 68);
-  }
-  .react-multi-carousel-dot.react-multi-carousel-dot--active button{
+}
+.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background: rgb(255, 68, 68) !important;
-  }
-
+}
 
 /*big */
 @media only screen and (min-width: 721px) and (max-width: 1200px) {
-    .OffSlider{
-        display: block;
-       }
+  .OffSlider {
+    display: block;
+  }
 }
 
- /* medium screens */
+/* medium screens */
 @media only screen and (min-width: 427px) and (max-width: 720px) {
-    .OffSlider{
-        display: block;
-       }
+  .OffSlider {
+    display: block;
+  }
 }
 
 /* small screens */
 @media only screen and (min-width: 0px) and (max-width: 426px) {
- .dealsBox{
-  display: none;
-  
- }
- .itemGrid{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  font-size: 12px;
- }
- 
+  .dealsBox {
+    display: none;
+  }
+  .itemGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 12px;
+  }
 
- .OffSlider{
-  display: none;
- }
+  .OffSlider {
+    display: none;
+  }
 }

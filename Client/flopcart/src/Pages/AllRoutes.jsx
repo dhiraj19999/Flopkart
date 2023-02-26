@@ -6,7 +6,9 @@ import Home from "./Home/Home";
 import Product from "./ProductPage/Product";
 import SingleProduct from "./SingleProduct/SingleProduct";
 import UserAccount from "./UserAccount/UserAccount";
-import AdninProduct from '../Components/Admin/AdminProduct'
+
+import UserAccountAdmin from "./Admin/UserAccountAdmin";
+
 const AllRoutes = () => {
   return (
     <Routes>
@@ -28,7 +30,8 @@ const AllRoutes = () => {
       <Route path="/myprofile" element={<UserAccount />}>
         Checkout
       </Route>
-      <Route  path="/Adminsingle/:id" element={<AdninProduct/>}/>
+
+      <Route path="/admin" element={<UserAccountAdmin />} />
     </Routes>
   );
 };

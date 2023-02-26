@@ -584,7 +584,9 @@ const Cart = () => {
               fontSize="17px"
               color="green"
             >
-              You will save ₹{total - discount} on this order{" "}
+
+              You will save ₹ {discount} on this order{" "}
+
             </Text>
           </Box>
           <Box
@@ -612,4 +614,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Cart;
