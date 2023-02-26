@@ -82,8 +82,8 @@ function Electronics() {
         display={"flex"}
         mt="20px"
         boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
-        p="1"
         bg="white"
+        p="1"
       >
         <Box
           width="25%"

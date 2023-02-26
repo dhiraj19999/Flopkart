@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Button, Image, Img, Text, WrapItem } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Image,
+  Img,
+  Stack,
+  Text,
+  WrapItem,
+} from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Cycling.css";
@@ -75,16 +83,15 @@ function Cycling() {
         display={"flex"}
         mt="30px"
         boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
-        p="1"
         bg="white"
       >
-        <Box
+        <Stack
+          justifyContent={"space-between"}
           width="25%"
           h="300px"
           m="auto"
           textAlign={"center"}
           className="dealsBox"
-          border={"1px solid black"}
         >
           <Text
             paddingTop={{ base: "120px", md: "120px", lg: "40px" }}
@@ -107,12 +114,11 @@ function Cycling() {
             alt="fg"
             width={"100%"}
           />
-        </Box>
+        </Stack>
         <Box
           w={{ base: "80%", md: "75%", lg: "84%" }}
           m="auto"
           className="OffSlider"
-          border={"1px solid black"}
           h="300px"
         >
           <div className="parent">

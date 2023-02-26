@@ -77,7 +77,6 @@ function Toy() {
           m="auto"
           textAlign={"center"}
           className="dealsBox"
-          border={"1px solid black"}
         >
           <Text
             paddingTop={{ base: "120px", md: "120px", lg: "40px" }}
@@ -105,7 +104,6 @@ function Toy() {
           w={{ base: "80%", md: "75%", lg: "84%" }}
           m="auto"
           className="OffSlider"
-          border={"1px solid black"}
           h="300px"
         >
           <div className="parent">

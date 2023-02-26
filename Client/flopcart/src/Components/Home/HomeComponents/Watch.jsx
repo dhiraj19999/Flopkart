@@ -1,8 +1,17 @@
 import React from "react";
-import { Box, Button, Image, Img, Text, WrapItem } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Image,
+  Img,
+  Stack,
+  Text,
+  WrapItem,
+} from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./clock.css";
+import { GrAccessibility, GrFormNext } from "react-icons/gr";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -82,22 +91,42 @@ const sliderImageUrl = [
 ];
 
 function Deal() {
+  const CustomLeftArrow = ({ onClick }) => {
+    return (
+      <Box onClick={() => onClick()} border="1px solid red">
+        <h1 style={{ fontWeight: "bolder", fontSize: "45px" }}>
+          {" "}
+          <GrFormNext />{" "}
+        </h1>
+      </Box>
+    );
+  };
+
+  const CustomRightArrow = ({ onClick }) => {
+    return (
+      <Box onClick={() => onClick()}>
+        <h1 style={{ fontWeight: "bolder", fontSize: "45px" }}>
+          {" "}
+          <GrFormNext />{" "}
+        </h1>
+      </Box>
+    );
+  };
+
   return (
     <div>
       <Box
         display={"flex"}
         mt="30px"
         boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
-        p="1"
         bg="white"
       >
-        <Box
+        <Stack
+          justifyContent={"space-between"}
           width="25%"
-          h="300px"
           m="auto"
           textAlign={"center"}
           className="dealsBox"
-          border={"1px solid black"}
         >
           <Text
             paddingTop={{ base: "120px", md: "120px", lg: "40px" }}
@@ -120,12 +149,11 @@ function Deal() {
             alt="fg"
             width={"100%"}
           />
-        </Box>
+        </Stack>
         <Box
           w={{ base: "80%", md: "75%", lg: "84%" }}
           m="auto"
           className="OffSlider"
-          border={"1px solid black"}
           h="300px"
         >
           <div className="parent">
