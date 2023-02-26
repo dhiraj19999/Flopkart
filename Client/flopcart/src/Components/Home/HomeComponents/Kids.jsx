@@ -80,7 +80,6 @@ function Kids() {
       >
         <Stack
           width="25%"
-          h="300px"
           m="auto"
           justifyContent="space-between"
           textAlign={"center"}

@@ -103,7 +103,6 @@ function Car() {
         <Stack
           justifyContent={"space-between"}
           width="25%"
-          h="300px"
           m="auto"
           textAlign={"center"}
           className="dealsBox"

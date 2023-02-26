@@ -85,13 +85,7 @@ function Electronics() {
         bg="white"
         p="1"
       >
-        <Box
-          width="25%"
-          h="300px"
-          m="auto"
-          textAlign={"center"}
-          className="dealsBox"
-        >
+        <Box width="25%" m="auto" textAlign={"center"} className="dealsBox">
           <Text
             paddingTop={{ base: "120px", md: "120px", lg: "40px" }}
             fontSize={{ base: "10px", md: "20px", lg: "30px" }}

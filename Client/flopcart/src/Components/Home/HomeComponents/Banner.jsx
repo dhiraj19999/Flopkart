@@ -40,7 +40,7 @@ const Banner = () => {
       containerClass="carousel-container"
     >
       {banerData.map((data) => (
-        <Image src={data.url}   />
+        <Image src={data.url} />
       ))}
     </Carousel>
   );
