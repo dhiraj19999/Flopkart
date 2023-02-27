@@ -12,6 +12,7 @@ import {
   RadioGroup,
   Radio,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { loadData, saveData } from "../../utils/accessLocalstorage";
 import axios from "axios";
@@ -34,10 +35,17 @@ const UserProfileEdit = () => {
   const [imgSelected, setImgSelected] = useState("");
   const [iconBtnLoading, setIconBtnLoading] = useState(false);
   const [submitBtnLoading, setSubmitBtnLoading] = useState(false);
+  const toast = useToast();
 
   const handleEtidalble = () => {
     if (isLoggedIn === false) {
-      alert("Invalid request");
+      toast({
+        title: "Please Login First",
+        description: "Seems you're not logged in !",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
       return;
     }
     setEditable((prev) => !prev);
