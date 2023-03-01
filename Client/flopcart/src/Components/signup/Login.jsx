@@ -88,7 +88,7 @@ const Login = () => {
       >
         {isLoggedIn ? loadData("firstName") : "Login"}
       </Text>
-      <Modal isOpen={isOpen} onClose={onClose} size="2xl" padding="0px">
+      <Modal isOpen={isOpen} onClose={onClose} size={{base:"sm",md:"xl",lg:"2xl"}} padding="0px">
         <ModalOverlay />
 
         <ModalContent>
@@ -100,7 +100,7 @@ const Login = () => {
               marginTop="-4"
             />
             <div style={{ display: "flex" }}>
-              <Box height="32rem" bg="#2874f0" width="16rem" padding="35px">
+              <Box  display={{base:"none",md:"block",lg:"block"}} height="32rem" bg="#2874f0" width="16rem" padding="35px">
                 <Text fontWeight="500" color="white" fontSize="3xl">
                   Login
                 </Text>
@@ -169,8 +169,7 @@ const Login = () => {
                     marginTop="4"
                     padding="6"
                     color="white"
-                    bg="#fb641b"
-                    width="19.7rem"
+                    w="19.7rem"
                   >
                     Login
                   </Button>
