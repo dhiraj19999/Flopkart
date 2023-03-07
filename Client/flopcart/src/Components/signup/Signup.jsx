@@ -102,7 +102,7 @@ const Signup = () => {
       >
         Sign Up
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose} size="2xl" padding="0px">
+      <Modal isOpen={isOpen} onClose={onClose} size={{base:"sm",md:"xl",lg:"2xl"}} padding="0px">
         <ModalOverlay />
 
         <ModalContent>
@@ -278,10 +278,12 @@ const Signup = () => {
                     onClick={handleSubmit}
                     borderRadius="0.5"
                     marginTop="4"
+                    rounded={{base:"lg",md:"none",lg:"none"}}
                     padding="6"
                     color="white"
                     bg="#fb641b"
-                    width="19.7rem"
+                    fontSize={{base:"xs",md:"lg"}}
+                    width={{base:"4.2rem",md:"19.7rem",lg:"19.7rem"}}
                   >
                     CONTINUE
                   </Button>
@@ -293,7 +295,7 @@ const Signup = () => {
                     padding="6"
                     color="#2f74f0"
                     bg="#fff"
-                    width="16.7rem"
+                    width={{base:"16.7rem"}}
                     _hover={"#fff"}
                   >
                     Existing User?{<Login />}
