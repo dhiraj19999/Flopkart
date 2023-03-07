@@ -204,7 +204,8 @@ productRouter.get("/", async (req, res) => {
 productRouter.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const product = await ProductModel.findOne({ _id: id });
+    const product = await ProductModel.find({ uniq_id: id });
+    
     res.status(201).json({ data: product, status: "Success" });
   } catch (error) {
     console.log(error);
