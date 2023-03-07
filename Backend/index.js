@@ -11,6 +11,18 @@ const swaggerJsDoc = require("swagger-jsdoc");
 require("dotenv").config();
 
 app.use(
+  express.static("public", {
+    index: false,
+    redirect: false,
+    setHeaders: (res, path, stat) => {
+      res.set(
+        "Content-Security-Policy",
+        "default-src 'self'; img-src 'self' https:"
+      );
+    },
+  })
+);
+app.use(
   cors({
     origin: "*",
   })

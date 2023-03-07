@@ -34,6 +34,8 @@ export const SingleProduc = () => {
       .get(`https://drab-pants-bass.cyclic.app/products/${id}`)
       .then((re) => {
         setData(re.data.data);
+        console.log(re.data.data);
+
         setimg(JSON.parse(re.data?.data[0]?.image));
 
         setCrImg(JSON.parse(re.data?.data[0]?.image)[0]);
@@ -67,6 +69,7 @@ export const SingleProduc = () => {
   };
   useEffect(() => {
     getData();
+    console.log(data);
   }, [id]);
 
   return (
