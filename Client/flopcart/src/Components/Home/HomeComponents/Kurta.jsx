@@ -34,7 +34,7 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img6a.flixcart.com/image/kurta/u/q/v/vnku004385-maroon-vishudh-xxl-original-imaehdjtwmge7azh.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/lipstick/q/i/1/8-beauty-sensational-water-proof-long-lasting-liquid-matte-mini-original-imaght6hbdxwhgxw.jpeg?q=70",
     brand: "Vishudh",
     retail_price: 999,
   },
@@ -43,49 +43,49 @@ const sliderImageUrl = [
   {
     id: 2,
     image:
-      "http://img6a.flixcart.com/image/kurta/q/d/m/2422-beige-libas-xxl-original-imaegfjeybmdzcfy.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/bedsheet/j/2/3/pink-bedsheet-with-pillow-covers-1-pinkmickygold-flat-risingstar-original-imaggc9pgpvbjbpe.jpeg?q=70",
     brand: "Libas",
     retail_price: 1849,
   },
   {
     id: 3,
     image:
-      "http://img5a.flixcart.com/image/kurta/s/c/g/vnku004370-pink-olive-vishudh-xxl-original-imaehdjsyzzfv6rj.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/ksuowi80/torch/i/f/b/mini-high-power-q5-led-cob-side-light-rechargeable-zoom-original-imag6b7dakufpgg8.jpeg?q=70",
     brand: "Vishudh",
     retail_price: 899,
   },
   {
     id: 4,
     image:
-      "http://img6a.flixcart.com/image/kurta/6/f/e/m001pcotsearain-masara-m-original-imaeheqbtkykajsx.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/deodorant/3/q/u/645-gold-temptation-dark-temptation-and-intense-3-deodorant-original-imaghavj7a4hfksn.jpeg?q=70",
     brand: "MASARA",
     retail_price: 1399,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/kurta/m/u/z/nw-0012-noor-xl-original-imaehfjzbzg9yhup.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/deodorant/3/q/u/645-gold-temptation-dark-temptation-and-intense-3-deodorant-original-imaghavj7a4hfksn.jpeg?q=70",
     brand: "NOOR",
     retail_price: 1649,
   },
   {
     id: 6,
     image:
-      "http://img5a.flixcart.com/image/kurta/9/a/g/lm015-love-more-4xl-original-imaegnvhyqhqcu2y.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l572ufk0/hair-oil/i/m/f/30-4-x-faster-beard-growth-oil-with-100-natural-ingredients-original-imagfxedwm9fhpmy.jpeg?q=70",
     brand: "Love More",
     retail_price: 1570,
   },
   {
     id: 7,
     image:
-      "http://img5a.flixcart.com/image/kurta/r/w/v/lm007-love-more-3xl-original-imaegnv3786wvhva.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/wipe/e/1/p/-original-imagheyafpe8tjxz.jpeg?q=70",
     brand: "Love More",
     retail_price: 2100,
   },
   {
     id: 8,
     image:
-      "http://img6a.flixcart.com/image/kurta/s/h/f/2438-red-libas-l-original-imaegfjeygyapnsr.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/ktizdzk0/body-skin-treatment/z/s/s/doodh-kesar-body-lotion-boroplus-original-imag6umbdg9zwhsb.jpeg?q=70",
     brand: "Libas",
     retail_price: 899,
   },

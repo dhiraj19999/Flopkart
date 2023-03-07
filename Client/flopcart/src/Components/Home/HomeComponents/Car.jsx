@@ -34,7 +34,7 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img5a.flixcart.com/image/cardigan/e/q/2/1-1-872907-roadster-m-original-imaeczn7rzdcghrz.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/shopsy-shoe/w/8/9/8-21212-nobelite-black-original-imagj5wbvszbetnz.jpeg?q=70",
     brand: "Roadster",
     retail_price: 1399,
   },
@@ -43,49 +43,49 @@ const sliderImageUrl = [
   {
     id: 2,
     image:
-      "http://img5a.flixcart.com/image/cargo/n/6/q/sky-8164-dpista-skystar-l-original-imae97ymmsuzybeg.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kqpj4i80/slipper-flip-flop/c/a/v/8-ff-375gr-375bk-footup-multicolor-6-original-imag4nqku8yc5rnd.jpeg?q=70",
     brand: "Men's Cargos",
     retail_price: 750,
   },
   {
     id: 3,
     image:
-      "http://img5a.flixcart.com/image/watch/8/e/4/lcs-4032-lois-caron-original-imaed5fpyhyzdvkt.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/t-shirt/n/d/h/xxl-ausk0156-ausk-original-imaghr28nuqhbza8.jpeg?q=70",
     brand: "Caron Watch",
     retail_price: 1200,
   },
   {
     id: 4,
     image:
-      "http://img6a.flixcart.com/image/cargo/z/a/5/sscp04-multicolor-j-marks-xl-original-imae6xvb34p2mt38.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/anklet/j/k/7/na-na-2-090-drama-queen-fashion-original-imaghpsm2afabug8.jpeg?q=70",
     brand: "Men's Cargos",
     retail_price: 1765,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/cargo/q/u/c/mslb0018-london-bee-30-original-imae3pfysft6drgy.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kybvo280/kurta/z/l/9/xl-plain-m-white-kurta-ruhi-fashion-original-imagahyyue82qxph.jpeg?q=70",
     brand: "Men's Cargos",
     retail_price: 1699,
   },
   {
     id: 6,
     image:
-      "http://img5a.flixcart.com/image/cargo/t/j/z/768bro-bodymark-32-1000x1000-imae4xjb7wf8yxvd.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/sari/f/p/g/free-digital-print-sarees-sadika-unstitched-original-imagmarfax3z6sfn.jpeg?q=70",
     brand: "Men's Cargos",
     retail_price: 1799,
   },
   {
     id: 7,
     image:
-      "http://img6a.flixcart.com/image/watch/7/g/m/w6701005-cartier-original-imaeajwaz8hpsfes.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/sandal/y/5/t/8-sandals-42-vechlo-black-original-imag5rzzbq2fvahj-bb.jpeg?q=70",
     brand: "Analog Watch",
     retail_price: 201000,
   },
   {
     id: 8,
     image:
-      "http://img5a.flixcart.com/image/cargo/n/g/h/cargo-38-green-madcaps-34-original-imae5qgvt3fhqq33.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l58iaa80/dupatta/4/h/v/2-25-meters-1-nf39-invent-fashion-original-imagfyamwgemyczz.jpeg?q=70",
     brand: "Men's Cargos",
     retail_price: 2199,
   },

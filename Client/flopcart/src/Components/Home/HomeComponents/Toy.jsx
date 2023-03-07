@@ -26,14 +26,14 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img5a.flixcart.com/image/pet-toy/n/a/r/a35-kennel-original-imaea5c3qxyqzrgz.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/nut-dry-fruit/9/0/a/750-dry-fruits-combo-pack-of-cashews-almonds-raisins-kismis-kaju-original-imaghdt9xapckmtp.jpeg?q=70",
     brand: "Kennel",
     retail_price: 190,
   },
   {
     id: 2,
     image:
-      "http://img5a.flixcart.com/image/pet-toy/r/7/m/01-snug-hug-1100x1100-imaeayzpsfpbjb4h.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/kurta/i/d/n/3xl-nsg-358-saabhi-original-imaghrb4t4wudgfp.jpeg?q=70",
     brand: "Snug Hug",
     retail_price: 499,
   },
@@ -41,21 +41,21 @@ const sliderImageUrl = [
   {
     id: 3,
     image:
-      "http://img6a.flixcart.com/image/pet-toy/z/c/p/blue-lion-fish-creative-spinach-original-imaedhmjvh9q3htz.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/jewellery-set/h/c/d/na-cultured-1-jw115-1-konasa-original-imagmekwgjzgugje.jpeg?q=70",
     brand: "Creative Spinach",
     retail_price: 799,
   },
   {
     id: 4,
     image:
-      "http://img6a.flixcart.com/image/pet-toy/y/a/r/pawzone-solid-rubber-dumble-toy-for-pets-pawzone-1100x1100-imaee4qmzfrfgzwg.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/sari/6/o/v/free-ms-293-brown-bella-worth-unstitched-original-imagkxg3cpznzuuz.jpeg?q=70",
     brand: "Pawzone",
     retail_price: 200,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/sun-shade/7/r/x/240349-speedwav-original-imaehpqkaw9zh9mq.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l4fxh8w0/hand-messenger-bag/a/g/v/stylish-handbag-women-girls-pink-vintage-star-hand-held-bag-original-imagfcb23pwdwk3f.jpeg?q=70",
     brand: "Speedwav",
     retail_price: 1400,
   },

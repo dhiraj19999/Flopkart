@@ -26,21 +26,21 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img5a.flixcart.com/image/usb-gadget/b/x/b/portable-1024-jrb-original-imaejgwyededybzp.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/jwzabgw0/trimmer/y/4/r/sensitive-touch-expert-veet-original-imafhjh5ah7vf9zc.jpeg?q=70",
     brand: "JRB",
     retail_price: 499,
   },
   {
     id: 2,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/k/8/m/shortkut-enterprises-model-no-493-original-imae6hpde2qezbxf.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l0sgyvk0/cases-covers/back-cover/c/b/s/zapsa03tpu01691-zapcase-original-imagcgffegrnhh6x.jpeg?q=70",
     brand: "Shortkut enterprises",
     retail_price: 1200,
   },
   {
     id: 3,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/j/e/v/shortkut-enterprises-model-no-498-original-imaeggfqkhmyys9y.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70",
     brand: "Shortkut enterprises",
     retail_price: 1200,
   },
@@ -48,28 +48,28 @@ const sliderImageUrl = [
   {
     id: 4,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/m/d/x/shortkut-enterprises-model-no-485-1100x1100-imaed2xjdgkfy5sh.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70",
     brand: "Shortkut enterprises",
     retail_price: 1200,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/usb-gadget/b/x/b/portable-1024-jrb-original-imaejgwyededybzp.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kzhbfrk0/power-bank/h/2/4/power-bank-dx09-20000-mah-20000-dx09-20k-callmate-original-imagbhec5wmkzzca.jpeg?q=70",
     brand: "JRB",
     retail_price: 499,
   },
   {
     id: 6,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/m/d/x/shortkut-enterprises-model-no-485-1100x1100-imaed2xjdgkfy5sh.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/printer/s/8/d/-original-imafkykednshkhx5.jpeg?q=70",
     brand: "Shortkut enterprises",
     retail_price: 1200,
   },
   {
     id: 7,
     image:
-      "http://img5a.flixcart.com/image/speaker/mobile-tablet-speaker/t/d/v/shortkut-enterprises-model-no-467-1100x1100-imaeggahdjzcbmj4.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kpmy8i80/monitor/q/r/w/vx3276-mhd-3-32-vs18391-viewsonic-original-imag3tp6tjfxhsfu.jpeg?q=70",
     brand: "Shortkut enterprises",
     retail_price: 1200,
   },

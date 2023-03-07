@@ -33,14 +33,14 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img6a.flixcart.com/image/shoe/g/6/e/red-1216-nuride-41-original-imaedsa82yrz5hxu.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kjuby4w0/deodorant/v/c/d/400-one8-intense-fresh-deo-pack-of-2-200ml-x-2-2-perfume-body-original-imafzbn4nv2zhccp.jpeg?q=70",
     brand: "Nuride",
     retail_price: 1999,
   },
   {
     id: 2,
     image:
-      "http://img5a.flixcart.com/image/shoe/k/t/g/beige-sb-whtsldrb-beige-shoebuzz-7-1000x1000-imaejgx4pkskscjm.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kgv5x8w0/slipcover/v/f/v/sfc-29-onterio-fab-original-imafxyen34zmpde3.jpeg?q=70",
     brand: "ShoeBuzz",
     retail_price: 799,
   },
@@ -48,28 +48,28 @@ const sliderImageUrl = [
   {
     id: 3,
     image:
-      "http://img6a.flixcart.com/image/shoe/c/s/v/white-gl-galaxy-5-glacier-9-original-imaefp8hkszjbvnq.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l2m78280/bedding-set/t/b/g/polycotton-bedding-set-queen-com-set-grey-bail-the-artsy-home-original-imagdxgdnpz7mzyq.jpeg?q=70",
     brand: "Glacier",
     retail_price: 629,
   },
   {
     id: 4,
     image:
-      "http://img5a.flixcart.com/image/shoe/7/x/a/island-blue-black-indigo-blue-asics-12-1000x1000-imaegdyh2awrm5vu.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kv9urgw0/air-freshener/y/w/j/150-double-ring-solar-car-perfumes-crystal-auto-rotate-car-original-imag87eny3n3rrzf.jpeg?q=70",
     brand: "Asics",
     retail_price: 9499,
   },
   {
     id: 5,
     image:
-      "http://img6a.flixcart.com/image/shoe/u/r/d/black-red-jqr-12blade-3-jqr-44-original-imaeh7y5fangcfpm.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kuu4x3k0/candle/p/g/a/home-decor-deep-for-diwali-3d-shadow-reflection-floating-plastic-original-imag7vck9af6tnpc.jpeg?q=70",
     brand: "JQR",
     retail_price: 1299,
   },
   {
     id: 6,
     image:
-      "http://img5a.flixcart.com/image/kit/q/n/w/jaspo-1-jaspo-saphire-dual-shoe-skates-comb-size-11-uk-for-age-original-imaedwyfbzbu2jdz.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/sweet-mithai/c/n/4/400-agra-petha-agra-famous-petha-sweet-dry-agra-peda-winter-original-imagkcbnhzh2vvbk.jpeg?q=70",
     brand: "JASPO",
     retail_price: 2299,
   },

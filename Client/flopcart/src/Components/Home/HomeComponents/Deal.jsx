@@ -33,14 +33,14 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img5a.flixcart.com/image/short/6/2/h/altght-11-alisha-38-original-imaeh2d5uq9thnyg.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l23mhzk0/top/a/b/l/m-tttp006710-tokyo-talkies-original-imagdgg4gqpmdgm8.jpeg?q=70",
     brand: "Alisha",
     retail_price: 699,
   },
   {
     id: 2,
     image:
-      "http://img5a.flixcart.com/image/short/5/z/c/altght4p-39-alisha-38-original-imaeh2d5ar6m55zd.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kn4xhu80/bra/x/c/3/lightly-padded-32e-no-regular-regular-br2213p08-clovia-original-imagfvnj3gmgqbxf.jpeg?q=70",
     brand: "Alisha",
     retail_price: 1199,
   },
@@ -48,28 +48,28 @@ const sliderImageUrl = [
   {
     id: 3,
     image:
-      "http://img5a.flixcart.com/image/short/m/g/y/altht-3p-18-alisha-34-original-imaeh2d5zgnh6vsb.jpeg",
+      "https://rukminim1.flixcart.com/fk-p-flap/200/200/image/5aa98b7cee183286.jpg?q=70",
     brand: "Alisha",
     retail_price: 1000,
   },
   {
     id: 4,
     image:
-      "http://img5a.flixcart.com/image/short/6/2/h/altght-11-alisha-38-original-imaeh2d5uq9thnyg.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l48s9zk0/shirt/w/s/r/m-st-pv-purple-majestic-man-original-imagf6g9knyyrxvp.jpeg?q=70",
     brand: "Alisha",
     retail_price: 699,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/short/5/z/c/altght4p-39-alisha-38-original-imaeh2d5ar6m55zd.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kpu3frk0/trouser/n/i/k/30-foilcombo9661-trend-level-original-imag3zggwyrwtbz9.jpeg?q=70",
     brand: "Alisha",
     retail_price: 1199,
   },
   {
     id: 6,
     image:
-      "http://img5a.flixcart.com/image/short/u/4/a/altht-3p-21-alisha-38-original-imaeh2d5vm5zbtgg.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/joq2qa80/jacket/v/h/8/m-fmjk0610-flying-machine-original-imafb4944xejmphz.jpeg?q=70",
     brand: "Alisha",
     retail_price: 999,
   },

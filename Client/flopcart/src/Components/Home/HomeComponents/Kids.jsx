@@ -33,7 +33,7 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img6a.flixcart.com/image/sweater/c/h/5/4001-grey-superkids-26-original-imaeap84grujmwzz.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/acoustic-guitar/e/y/y/dd-380c-blk-jixing-original-imaeff94e9tczafp.jpeg?q=70",
     brand: "Super Kids",
     retail_price: 825,
   },
@@ -42,28 +42,28 @@ const sliderImageUrl = [
   {
     id: 2,
     image:
-      "http://img6a.flixcart.com/image/backpack/p/n/3/twity-face-bag-multicolor-pandora-backpack-kids-school-bag-twity-1000x1000-imaehc4xn9qxffhw.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/k0plpjk0/remote-control-toy/9/g/k/4-function-remote-control-high-speed-big-racing-car-toy-funkey-original-imafkg33umd8dy93.jpeg?q=70",
     brand: "Pandora",
     retail_price: 799,
   },
   {
     id: 3,
     image:
-      "http://img6a.flixcart.com/image/mosquito-net/b/z/k/cvpc021-chinmay-kids-printed-cotton-padded-1100x1100-imaee82ggwrudusk.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/jk1grrk0/car-pressure-washer/j/c/m/06008a7af0-bosch-original-imaf7hd6bv8g3m6r.jpeg?q=70",
     brand: "CHINMAY KIDS",
     retail_price: 1490,
   },
   {
     id: 4,
     image:
-      "http://img5a.flixcart.com/image/backpack/p/n/3/twity-face-bag-multicolor-pandora-backpack-kids-school-bag-twity-original-imaehc5yhttfjak8.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kjuby4w0/deodorant/v/c/d/400-one8-intense-fresh-deo-pack-of-2-200ml-x-2-2-perfume-body-original-imafzbn4nv2zhccp.jpeg?q=70",
     brand: "Pandora",
     retail_price: 799,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/lunch-box/n/s/m/gayatri-creations-orange-kids-set-original-imaehh3e5v69z5cg.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/jjolt3k0/ball/j/b/6/400-22-5-country-colour-1-1360br-football-nivia-original-imaf746mud9cxqgh.jpeg?q=70",
     brand: "GAYATRI CREATIONS",
     retail_price: 695,
   },

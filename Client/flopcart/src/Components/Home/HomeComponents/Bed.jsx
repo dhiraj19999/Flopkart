@@ -33,7 +33,7 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img6a.flixcart.com/image/sofa-bed/j/f/y/fhd112-double-foam-fabhomedecor-leatherette-black-leatherette-1100x1100-imaeh3gemjjcg9ta.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kzx1a4w0/track-pant/2/6/n/xl-trackpant9013-vitaan-original-imagbtf2jbm9dygg.jpeg?q=70",
     brand: "FabHomeDecor",
     retail_price: 32157,
   },
@@ -42,42 +42,42 @@ const sliderImageUrl = [
   {
     id: 2,
     image:
-      "http://img6a.flixcart.com/image/bedsheet/d/r/8/goldbedi-81-santosh-royal-fashion-flat-gold-design-royal-cotton-1100x1100-imaejqxsmby6afqw.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/slipper-flip-flop/b/k/q/6-slides-a-611bk-footup-black-original-imagm6r3uu8xzcm4.jpeg?q=70",
     brand: "SANTOSH ROYAL FASHION",
     retail_price: 2699,
   },
   {
     id: 3,
     image:
-      "http://img6a.flixcart.com/image/bedsheet/w/q/u/jaipur117-jaipur-print-flat-jaipur117-original-imaejfv5fzysgpfy.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l4a7pu80/mosquito-net/x/v/a/double-bed-machhardani-double-bed-size-6-5ft-x-200-6-5ft-x-145-original-imagf73brgggghtz.jpeg?q=70",
     brand: "Jaipur Print",
     retail_price: 2599,
   },
   {
     id: 4,
     image:
-      "http://img5a.flixcart.com/image/bedsheet/s/j/f/ahmd11-jaipur-print-flat-ahmd11-original-imaegsgckwx58eby.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/jl8bzbk0/glass/c/c/w/stainless-steel-g4-12-limetro-original-imaf8a3zu5mnzfex.jpeg?q=70",
     brand: "Jaipur Print",
     retail_price: 2599,
   },
   {
     id: 5,
     image:
-      "http://img6a.flixcart.com/image/sofa-bed/j/6/q/fhd115-double-foam-fabhomedecor-dark-brown-dark-brown-original-imaeh3gee5zcazvm.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kx50gi80/pen/h/z/k/119766-flair-original-imag9nzubznagufg.jpeg?q=70",
     brand: "FabHomeDecor",
     retail_price: 32157,
   },
   {
     id: 6,
     image:
-      "http://img6a.flixcart.com/image/pillow/g/c/s/3drfiljdx-5-45x60-jdx-jdx-premium-3d-reliance-fibre-very-soft-1100x1100-imae4a5gf8bwvgcz.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/cap/k/s/r/free-sticker-speqta-original-imaghxe8gdzca344.jpeg?q=70",
     brand: "JDX",
     retail_price: 5299,
   },
   {
     id: 7,
     image:
-      "http://img6a.flixcart.com/image/showpiece-figurine/t/u/r/cml401-k-p-original-imaehgs9tykmb32g.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l3uhvgw0/cycle/n/z/c/torro-26t-26-16-montra-72-21-gear-original-imagevzncygdd8ah.jpeg?q=70",
     brand: "K&P",
     retail_price: 3579,
   },

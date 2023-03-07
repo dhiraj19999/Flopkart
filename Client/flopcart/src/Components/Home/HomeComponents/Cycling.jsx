@@ -33,7 +33,7 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img6a.flixcart.com/image/shoe/k/u/x/white-sports7006-knight-ace-10-original-imaehe55fpszmt6w.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kz8qsnk0/mosquito-net/h/1/p/double-bed-polyester-adults-blue-mosquito-net-double-bed-nets-original-imagbagfgnfvnquj.jpeg?q=70",
     brand: "Knight Ace",
     retail_price: 1299,
   },
@@ -42,35 +42,35 @@ const sliderImageUrl = [
   {
     id: 2,
     image:
-      "http://img5a.flixcart.com/image/short/j/u/q/cswiw-cmb3-shr-105-104-103-mynte-l-original-imaeeg4hzbm5cgsj.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/k5e7o280/wall-clock/6/h/j/designer-wall-clock10-cw-ct-red25412-analog-ajanta-original-imafzyx3fdtf2hcb.jpeg?q=70",
     brand: "Mynte",
     retail_price: 1499,
   },
   {
     id: 3,
     image:
-      "http://img6a.flixcart.com/image/short/q/z/v/altht-3p-17-alisha-36-original-imaeh2d5njykvkz6.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kz7bcsw0/artificial-plant/c/s/z/11-yes-4potss-ryme-original-imagb9zw4msbftaw.jpeg?q=70",
     brand: "Alisha",
     retail_price: 999,
   },
   {
     id: 4,
     image:
-      "http://img5a.flixcart.com/image/short/6/2/h/altght-11-alisha-38-original-imaeh2d5uq9thnyg.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/hose-connector/b/q/b/1-2-brass-nozzle-water-spray-gun-hose-nozzles-pipe-for-gardening-original-imaghbm9jgx9vgxh.jpeg?q=70",
     brand: "Alisha",
     retail_price: 699,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/short/r/t/2/cswiw-cmb4-shr-102-101-100-99-mynte-l-original-imaeeg4kujzhetnp.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/ku79vgw0/cushion-pillow-cover/i/w/j/solid-satin-sugarchic-original-imag7dpsejfqefpn.jpeg?q=70",
     brand: "Mynte",
     retail_price: 1995,
   },
   {
     id: 6,
     image:
-      "http://img5a.flixcart.com/image/short/f/r/z/cswiw-cmb5-shr-105-104-102-100-99-mynte-l-original-imaeeg4kfkr7huhr.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/jxxkvww0/bath-linen-set/h/y/h/p4-bathsports-gretea-heelium-original-imafg3zc8kfqzpza.jpeg?q=70",
     brand: "Mynte",
     retail_price: 2495,
   },

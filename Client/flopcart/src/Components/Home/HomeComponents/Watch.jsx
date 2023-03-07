@@ -34,14 +34,14 @@ const sliderImageUrl = [
   {
     id: 1,
     image:
-      "http://img5a.flixcart.com/image/watch/s/y/x/co6394a1-cobra-paris-original-imae3ewvtzeazghm.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/l51d30w0/shopsy-sport-mat/p/w/s/anadi-01-yoga-mat-4-30-anadi-enterprise-15-original-imagfsxudxcm7r48.jpeg?q=70",
     brand: "Rochees",
     retail_price: 18995,
   },
   {
     id: 2,
     image:
-      "http://img5a.flixcart.com/image/watch/a/y/m/r8851116001-maserati-time-original-imaeafe6hf6zvhmm.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/jc0ttow0/vehicle-lubricant/5/h/q/1-3000-4t-plus-20w40-hc-tech-engine-oil-for-bikes-motul-original-imaff8z4xtq5ry6a.jpeg?q=70",
     brand: "Aries",
     retail_price: 24400,
   },
@@ -49,42 +49,42 @@ const sliderImageUrl = [
   {
     id: 3,
     image:
-      "http://img6a.flixcart.com/image/watch/d/3/d/uft-tsw-005-bk-br-t-star-original-imaecgzggrcdhm5x.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kkimfm80/tea/z/n/1/premium-pouch-regular-tea-powder-tata-original-imafzuf2mnubzphd.jpeg?q=70",
     brand: "Camerii",
     retail_price: 999,
   },
   {
     id: 4,
     image:
-      "http://img5a.flixcart.com/image/watch/a/y/m/r8851116001-maserati-time-original-imaeafe6hf6zvhmm.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/sweet-mithai/c/n/4/400-agra-petha-agra-famous-petha-sweet-dry-agra-peda-winter-original-imagkcbnhzh2vvbk.jpeg?q=70",
     brand: "Vizion",
     retail_price: 24400,
   },
   {
     id: 5,
     image:
-      "http://img5a.flixcart.com/image/watch/d/n/h/apple-shaped-led-rich-club-original-imaeczhwqgtvecwn.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/kcjexe80/honey/w/y/4/1-honey-saffola-original-imaftn9ppz2shxzg.jpeg?q=70",
     brand: "Aries",
     retail_price: 999,
   },
   {
     id: 6,
     image:
-      "http://img5a.flixcart.com/image/watch/e/j/g/wy16b-alfajr-original-imaecgzzfywury4r.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/shirt/e/k/x/5-6-years-tiny-shirt-winsworld-original-imagm2gc9yzsbhxt.jpeg?q=70",
     brand: "Alfajr",
     retail_price: 5495,
   },
   {
     id: 7,
     image:
-      "http://img6a.flixcart.com/image/watch/d/r/c/colat-m08-colat-original-imae2ruyfg9zunzb.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/ksez24w0/hand-messenger-bag/w/z/z/amy-plus-md-satchel-ladies-handbag-hgge016022m3-satchel-lavie-original-imag5zj5aqrwgcdz.jpeg?q=70",
     brand: "Alfajr",
     retail_price: 4999,
   },
   {
     id: 8,
     image:
-      "http://img6a.flixcart.com/image/watch/e/k/d/chrono-blue-oxter-original-imaecv84zttgkfm4.jpeg",
+      "https://rukminim1.flixcart.com/image/200/200/xif0q/shopsy-necklace-chain/p/n/h/1-holo-combo-shopsy-chain-coming-soon-original-imagfgp4znqpmyhk.jpeg?q=70",
     brand: "Alfajr",
     retail_price: 999,
   },
