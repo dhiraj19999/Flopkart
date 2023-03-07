@@ -125,7 +125,7 @@ export const Productlist = () => {
       <div className={styles.products_box}>
         {products?.map((el, i) => {
           return !loading ? (
-            <Link to={`/product/${el._id}`}>
+            <Link to={`/product/${el.uniq_id}`}>
               <ProductCard {...el} key={i} />
             </Link>
           ) : (
