@@ -267,7 +267,7 @@ cartRouter.patch("/update/:id", async (req, res) => {
 cartRouter.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const cart = await CartModel.findByIdAndDelete({ _id: id });
+    const cart = await CartModel.findByIdAndDelete({ uniq_id: id });
     res
       .status(201)
       .json({ message: "Cart item deleted successfully", status: "Success" });

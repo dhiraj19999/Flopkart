@@ -37,7 +37,7 @@ export const Productlist = () => {
     dispatch(
       getData(name, {
         params: {
-          sortBy: q,
+          sortby: q,
         },
       })
     );
