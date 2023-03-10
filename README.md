@@ -18,8 +18,8 @@ user registration and login, user profile section, add to cart and checkout page
 
 <h2>🌐See Live here 👇</h2>
 
-Vercel Link: https://flopcart-nine.vercel.app/
-Netlify Link: https://flopkart-online-app.netlify.app/
+<h4>➡️ Vercel Link: https://flopcart-nine.vercel.app/</h4>
+<h4>➡️ Netlify Link: https://flopkart-online-app.netlify.app/</h4>
 
 <h2>Sneak Peek of website</h2>
 
