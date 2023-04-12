@@ -3,7 +3,7 @@ import axios from "axios";
 export const getProd = async () => {
   try {
     const prods = await axios.get(
-      "https://drab-pants-bass.cyclic.app/products"
+      "https://flopkart-backend-api.onrender.com/products"
     );
     return prods.data;
   } catch (err) {
@@ -14,7 +14,7 @@ export const getProd = async () => {
 export const postProd = async (prod) => {
   try {
     const res = await axios.post(
-      "https://drab-pants-bass.cyclic.app/products/add",
+      "https://flopkart-backend-api.onrender.com/products/add",
       prod
     );
     return res.data;
@@ -26,7 +26,7 @@ export const postProd = async (prod) => {
 export const deleteProd = async (prodID) => {
   try {
     const res = await axios.delete(
-      "https://drab-pants-bass.cyclic.app/products/" + prodID
+      "https://flopkart-backend-api.onrender.com/products/" + prodID
     );
     return res.data;
   } catch (err) {
@@ -37,7 +37,7 @@ export const deleteProd = async (prodID) => {
 export const patchProd = async (prodID, changes) => {
   try {
     const res = await axios.patch(
-      "https://drab-pants-bass.cyclic.app/products/" + prodID,
+      "https://flopkart-backend-api.onrender.com/products/" + prodID,
       changes
     );
     return res.data;

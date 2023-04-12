@@ -22,7 +22,7 @@ const SidebarContentAdmin = ({ onClose, handleRenderInfo, ...rest }) => {
 
   const deleteAccount = async () => {
     console.log("Deactivating");
-    fetch("https://drab-pants-bass.cyclic.app/user/delete/" + loadData("_id"), {
+    fetch("https://flopkart-backend-api.onrender.com/user/delete/" + loadData("_id"), {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

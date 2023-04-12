@@ -57,7 +57,7 @@ const Cart = () => {
 
   const deleteItems = (id) => {
     return axios.delete(
-      `https://drab-pants-bass.cyclic.app/cart/delete/${id}`,
+      `https://flopkart-backend-api.onrender.com/cart/delete/${id}`,
       {
         headers: {
           Authorization: loadData("token"),
@@ -382,7 +382,7 @@ const Cart = () => {
                       variant="unstyled"
                       bg="none"
                       color
-                      onClick={() => handleRemoveItem(data._id)}
+                      onClick={() => handleRemoveItem(data.uniq_id)}
                     >
                       REMOVE
                     </Button>

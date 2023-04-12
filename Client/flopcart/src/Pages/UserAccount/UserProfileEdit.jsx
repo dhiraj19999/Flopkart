@@ -93,7 +93,7 @@ const UserProfileEdit = () => {
 
     // console.log(ID, payload);
 
-    fetch("https://drab-pants-bass.cyclic.app/user/update/" + ID, {
+    fetch("https://flopkart-backend-api.onrender.com/user/update/" + ID, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -112,7 +112,7 @@ const UserProfileEdit = () => {
   };
 
   const getUpdatedUserData = async (userID) => {
-    fetch("https://drab-pants-bass.cyclic.app/user/all-users/" + userID, {
+    fetch("https://flopkart-backend-api.onrender.com/user/all-users/" + userID, {
       method: "GET",
       headers: {
         "Content-type": "application/json",

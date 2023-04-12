@@ -37,7 +37,7 @@ export const register = (formdata) => {
 
     try {
       const response = await fetch(
-        "https://drab-pants-bass.cyclic.app/user/register",
+        "https://flopkart-backend-api.onrender.com/user/register",
         {
           method: "POST",
           headers: {
@@ -83,7 +83,7 @@ export const login = (email, password) => {
 
     try {
       const response = await fetch(
-        "https://drab-pants-bass.cyclic.app/user/login",
+        "https://flopkart-backend-api.onrender.com/user/login",
         {
           method: "POST",
           headers: {

@@ -38,7 +38,7 @@ function handleadd(){
 
 }
 const  getData= async(page) =>{
-    return await fetch(`https://drab-pants-bass.cyclic.app/products?limit=32&page=${page}`).then((res)=>res.json())
+    return await fetch(`https://flopkart-backend-api.onrender.com/products?limit=32&page=${page}`).then((res)=>res.json())
   }
 
 

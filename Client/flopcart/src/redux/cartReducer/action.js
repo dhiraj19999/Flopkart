@@ -1,6 +1,7 @@
 import { loadData } from "../../utils/accessLocalstorage";
 import * as types from "./actionTypes";
 import axios from "axios";
+import { BsChevronDoubleLeft } from "react-icons/bs";
 
 const getDataReq = () => {
   return {
@@ -42,7 +43,6 @@ const delDataReq = () => {
 const delDataSuccess = () => {
   return {
     type: types.DEL_CART_SUCCESS,
-    
   };
 };
 const delDataErr = () => {
@@ -53,25 +53,29 @@ const delDataErr = () => {
 const cartLength = () => (dispatch) => {
   dispatch(getDataReq());
   return axios
-    .get(`https://drab-pants-bass.cyclic.app/cart`, {
+    .get(`https://flopkart-backend-api.onrender.com/cart`, {
       headers: {
         Authorization: loadData("token"),
       },
     })
     .then((re) => {
+      console.log("acttion", re.data);
       return dispatch(getDataSuccess(re.data.data));
     })
     .catch((err) => dispatch(getDataError()));
 };
 const addData = (p) => (dispatch) => {
-  dispatch(addDataReq);
+  dispatch(addDataReq());
   return axios
-    .post(`https://drab-pants-bass.cyclic.app/cart/add`, p, {
+    .post(`https://flopkart-backend-api.onrender.com/add`, p, {
       headers: {
         Authorization: loadData("token"),
       },
     })
-    .then((re) => dispatch(addDataSuccess()))
+    .then((re) => {
+      console.log(re.data);
+      dispatch(addDataSuccess());
+    })
     .catch((er) => dispatch(addDataErr()));
 };
 export {
@@ -84,4 +88,3 @@ export {
   delDataReq,
   delDataSuccess,
 };
-

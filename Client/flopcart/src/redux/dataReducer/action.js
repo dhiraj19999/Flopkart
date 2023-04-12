@@ -20,7 +20,7 @@ const getDataError = () => {
 const getData = (query, p) => (dispatch) => {
   dispatch(getDataReq());
   return axios
-    .get(`https://drab-pants-bass.cyclic.app/products?q=${query}`, p)
+    .get(`https://flopkart-backend-api.onrender.com/products?q=${query}`, p)
     .then((re) => dispatch(getDataSuccess(re.data)))
     .catch((err) => dispatch(getDataError(err)));
 };

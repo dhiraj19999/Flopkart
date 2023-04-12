@@ -20,7 +20,7 @@ const Navbar = () => {
       px={nav.px}
       pos="sticky"
       top="0"
-      zIndex="1000"
+      zIndex="10000000000000000000"
     >
       {/* Logo & search */}
       <HStack

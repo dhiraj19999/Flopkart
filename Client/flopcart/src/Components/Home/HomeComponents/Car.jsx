@@ -148,7 +148,7 @@ function Car() {
             >
               {sliderImageUrl.map((imageUrl, index) => {
                 return (
-                  <Link to="products/men">
+                  <Link to="/products/men">
                     <div className="slider" key={index}>
                       <div className="slider8">
                         <Image

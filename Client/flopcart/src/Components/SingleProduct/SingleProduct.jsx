@@ -31,9 +31,9 @@ export const SingleProduc = () => {
   const { carts } = useSelector((store) => store.cartReducer);
   const getData = () => {
     return axios
-      .get(`https://drab-pants-bass.cyclic.app/products/${id}`)
+      .get(`https://flopkart-backend-api.onrender.com/products/${id}`)
       .then((re) => {
-        setData(re.data.data);
+        setData(re.data.data.splice(0, 1));
         console.log(re.data.data);
 
         setimg(JSON.parse(re.data?.data[0]?.image));

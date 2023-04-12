@@ -16,7 +16,7 @@ const cartSchema = mongoose.Schema({
   description: String,
   product_rating: String,
   overall_rating: String,
-  brand: reqString,
+  brand: String,
   product_specifications: reqString,
   authorID: String,
   quantity: { type: Number, default: 1 },
