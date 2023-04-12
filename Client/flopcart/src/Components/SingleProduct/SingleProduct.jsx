@@ -33,12 +33,11 @@ export const SingleProduc = () => {
     return axios
       .get(`https://flopkart-backend-api.onrender.com/products/${id}`)
       .then((re) => {
-        setData(re.data.data.splice(0, 1));
-        console.log(re.data.data);
-
-        setimg(JSON.parse(re.data?.data[0]?.image));
-
-        setCrImg(JSON.parse(re.data?.data[0]?.image)[0]);
+        setData(re?.data?.data);
+        console.log(data[0]);
+        setimg(JSON.parse(re?.data?.data[0]?.image));
+        console.log(JSON.parse(re?.data?.data[0]?.image)[0]);
+        setCrImg(JSON.parse(re?.data?.data[0]?.image)[0]);
       })
       .catch((err) => console.log(err));
   };
@@ -69,7 +68,7 @@ export const SingleProduc = () => {
   };
   useEffect(() => {
     getData();
-    console.log(data);
+    console.log(id, data);
   }, [id]);
 
   return (
